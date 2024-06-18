@@ -1,4 +1,5 @@
 import Card from "../../../common/card/Card";
+import AddSupplier from "../../../common/addSupplier/AddSupplier";
 // import PiedraPasilloAlFondo from "../../../images/piedra.jpg";
 // import Basa from "../../../images/retiro.jpg";
 // import Trescha from "../../../images/treschaResto.jpg";
@@ -43,7 +44,6 @@ import Card from "../../../common/card/Card";
 //   },
 // ];
 
-
 const data = [
   {
     nombre: 'Piedra Pasillo Al Fondo',
@@ -71,7 +71,12 @@ const data = [
 ];
 
 const Restaurants = () => {
-  return <Card data={data}></Card>;
+  return (
+    <div>
+      <Card data={data}></Card>
+      <AddSupplier> </AddSupplier>;
+    </div>
+  );
 };
 
 export default Restaurants;
