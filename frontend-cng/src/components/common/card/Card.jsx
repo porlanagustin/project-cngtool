@@ -39,30 +39,28 @@ const Card = ({ data }) => {
       });
   };
 
-  // Función para generar las estrellas
-  const renderStars = (puntuacion) => {
-    const stars = [];
-    const totalStars = 5;
-    const roundedRating = Math.round(puntuacion * 2) / 2; // Redondea al medio punto más cercano
+  // const renderStars = (puntuacion) => {
+  //   const stars = [];
+  //   const totalStars = 5;
+  //   const roundedRating = Math.round(puntuacion * 2) / 2;
 
-    for (let i = 1; i <= totalStars; i++) {
-      if (i <= roundedRating) {
-        stars.push(
-          <span key={i} className="star">
-            &#9733;
-          </span>
-        );
-      } else {
-        stars.push(
-          <span key={i} className="star empty">
-            &#9734;
-          </span>
-        );
-      }
-    }
-
-    return stars;
-  };
+  //   for (let i = 1; i <= totalStars; i++) {
+  //     if (i <= roundedRating) {
+  //       stars.push(
+  //         <span key={i} className="star">
+  //           &#9733;
+  //         </span>
+  //       );
+  //     } else {
+  //       stars.push(
+  //         <span key={i} className="star empty">
+  //           &#9734;
+  //         </span>
+  //       );
+  //     }
+  //   }
+  //   return stars;
+  // };
 
   return (
     <div>
@@ -71,30 +69,17 @@ const Card = ({ data }) => {
           <div className="card" key={rowIndex}>
             <figure>
               <img src={row.img} alt="" />
-              <div className="puntuacion">
-                {renderStars(row.puntuacion)}
-                <span>({row.puntuacion})</span>
-              </div>
             </figure>
             <div className="contenido-card">
               <h3>{row.nombre}</h3>
               <p>{row.descripcion}</p>
-              <p>Dirección: {row.direccion}</p>
-              <p>
-                Web:{" "}
-                <a href={row.web} target="_blank" rel="noopener noreferrer">
-                  {row.web}
-                </a>
-              </p>
-
-              <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  checked={selectedRows.includes(rowIndex)}
-                  onChange={() => handleCheckboxChange(rowIndex)}
-                />
-                <span>Seleccionar</span>
-              </label>
+              <p>Direccion: {row.direccion}</p>
+              <p>Web: {row.web}</p>
+              <input
+                type="checkbox"
+                checked={selectedRows.includes(rowIndex)}
+                onChange={() => handleCheckboxChange(rowIndex)}
+              />
             </div>
           </div>
         ))}
@@ -105,6 +90,47 @@ const Card = ({ data }) => {
         </button>
       </div>
     </div>
+
+    // <div>
+    //   <div className="container-card">
+    //     {data.map((row, rowIndex) => (
+    //       <div className="card" key={rowIndex}>
+    //         <figure>
+    //           <img src={row.img} alt="" />
+    //           <div className="puntuacion">
+    //             {renderStars(row.puntuacion)}
+    //             <span>({row.puntuacion})</span>
+    //           </div>
+    //         </figure>
+    //         <div className="contenido-card">
+    //           <h3>{row.nombre}</h3>
+    //           <p>{row.descripcion}</p>
+    //           <p>Dirección: {row.direccion}</p>
+    //           <p>
+    //             Web:{" "}
+    //             <a href={row.web} target="_blank" rel="noopener noreferrer">
+    //               {row.web}
+    //             </a>
+    //           </p>
+
+    //           <label className="checkbox-label">
+    //             <input
+    //               type="checkbox"
+    //               checked={selectedRows.includes(rowIndex)}
+    //               onChange={() => handleCheckboxChange(rowIndex)}
+    //             />
+    //             <span>Seleccionar</span>
+    //           </label>
+    //         </div>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div className="button-container">
+    //     <button className="buttonPDF" onClick={handleImprimirClick}>
+    //       Imprimir PDF
+    //     </button>
+    //   </div>
+    // </div>
   );
 };
 
