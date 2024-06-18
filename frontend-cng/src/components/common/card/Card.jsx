@@ -2,7 +2,7 @@ import './Card.css';
 import { useState } from "react";
 import axios from 'axios';
 
-const apiUrl = 'http://127.0.0.1:8080/concierge'
+const apiUrl = 'http://127.0.0.1:8000/concierge'
 
 const Card = ({data}) => {
 
@@ -23,8 +23,11 @@ const Card = ({data}) => {
       const handleImprimirClick = () => {
         
         const filasSeleccionadas = selectedRows.map((rowIndex) => dataFilter[rowIndex]);
-      
+    
+
         axios.post(apiUrl, filasSeleccionadas, { responseType: 'arraybuffer' })
+        
+
           .then((response) => {
             
             const blob = new Blob([response.data], { type: 'application/pdf' });

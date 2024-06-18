@@ -6,8 +6,6 @@ from .. import models, schemas
 from ..pdfgeneration import pdfgenerator
 from typing import List
 
-
-
 router = APIRouter(
     prefix="/concierge",
     tags=['Concierge'] 
