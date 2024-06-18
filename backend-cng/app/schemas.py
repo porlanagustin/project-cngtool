@@ -58,6 +58,7 @@ class DataSuppliers(BaseModel):
 class Vote(BaseModel):
     supplier_id: int
 
+
 #NO FUNCIONA
 #class PostOut(PostBase):
 #    Post: Post
