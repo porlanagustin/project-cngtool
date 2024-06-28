@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import React, { useState } from "react";
+import { logOut } from "../../../services/authServices.js";
+import { useNavigate } from "react-router-dom";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -10,10 +12,12 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
+
 const Navbar = () => {
   const [proveedoresAnchorEl, setProveedoresAnchorEl] = useState(null);
   const [destinosAnchorEl, setDestinosAnchorEl] = useState(null);
   const [calendarAnchorEl, setCalendarAnchorEl] = useState(null);
+  const navigate = useNavigate();
 
   const handleMenuClick = (event, anchorElSetter) => {
     anchorElSetter(event.currentTarget);
@@ -22,6 +26,11 @@ const Navbar = () => {
   const handleMenuClose = (anchorElSetter) => {
     anchorElSetter(null);
   };
+
+  const handleClick = () => {
+    logOut();
+    navigate('/')
+  }
 
   return (
     <AppBar position="static" color="primary">
@@ -198,6 +207,9 @@ const Navbar = () => {
                 style={{ maxWidth: "100px", marginLeft: "10px" }}
               />
             </Button>
+          </Box>
+          <Box>
+          <button onClick={handleClick}>LOGOUT</button>
           </Box>
         </Toolbar>
       </Container>

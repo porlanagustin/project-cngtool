@@ -4,64 +4,61 @@ from datetime import datetime
 from typing_extensions import Annotated
 
 class UserCreate(BaseModel):
-    email: EmailStr
+    dni: int
     password: str
+    role: str
 
 class UserOut(BaseModel):
-    id: int
-    email: EmailStr
+    dni: int
 
     class Config:
         from_attributes = True
 
 class UserLogin(BaseModel):
-    email: EmailStr
+    dni: str
     password: str
 
-class PostBase(BaseModel):
+class DataRestaurant(BaseModel):
     name: str
-    offers: str
-    phone: str
-    email: str
+    image: str
+    address: str
     web: str
-    type: str
-    region: str
-    
+    description: str
+    image: str
 
-class PostCreate(PostBase):
+class PostCreate(DataRestaurant):
     pass
-
-class Post(PostBase):
-    id: int
-    created_at: datetime
-    owner_id: int
-    owner: UserOut
-    
-
-    class Config:
-        from_attributes = True
 
 class Token(BaseModel):
     access_token: str
     token_type: str
 
 class TokenData(BaseModel):
-    id: Optional[str] = None
+    dni: str
 
-class DataSuppliers(BaseModel):
-    nombre: str
-    img: str
-    direccion: str
-    web: str
-    descripcion: str
+class Post(DataRestaurant):
+    id: int
+    created_at: datetime
+    owner_id: int
+    owner: UserOut
     
-class Vote(BaseModel):
-    supplier_id: int
 
+#     class Config:
+#         from_attributes = True
+
+# class Vote(BaseModel):
+#     supplier_id: int
 
 #NO FUNCIONA
 #class PostOut(PostBase):
 #    Post: Post
 #    votes: int
 
-    
+ # class PostBase(BaseModel):
+#     name: str
+#     offers: str
+#     phone: str
+#     email: str
+#     web: str
+#     type: str
+#     region: str   

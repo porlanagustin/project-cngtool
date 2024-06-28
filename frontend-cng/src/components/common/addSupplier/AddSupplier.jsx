@@ -1,76 +1,119 @@
-import React, { useState } from "react";
-import "./AddSupplier.css";
+import { useState } from 'react';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import './AddSupplier.css';
+import { getToken } from '../../../services/authServices';
 
 const AddSupplier = () => {
-  const [nombre, setNombre] = useState("");
-  const [img, setImg] = useState("");
-  const [direccion, setDireccion] = useState("");
-  const [web, setWeb] = useState("");
-  const [descripcion, setDescripcion] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log({ nombre, img, direccion, web, descripcion });
-    setNombre("");
-    setImg("");
-    setDireccion("");
-    setWeb("");
-    setDescripcion("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
 
-    alert("Restaurante agregado correctamente!");
+    const data = new FormData(e.target);
+    const token = getToken();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/manageSupplier/uploadRestaurant",
+        data,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            "Authorization": `Bearer ${token}`,
+          },
+        }
+      );
+
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Restaurante agregado exitosamente",
+        showConfirmButton: false,
+        timer: 1500
+      });
+
+      e.target.reset();
+    } catch (error) {
+      console.error("Error al agregar el restaurante:", error);
+      setError("Hubo un error al agregar el restaurante. Por favor, inténtelo de nuevo.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="form-container">
       <h2>Agregar Nuevo Restaurante</h2>
+      {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSubmit}>
-        <label>
-          Nombre del restaurante:
-          <input
-            type="text"
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          URL de la imagen:
-          <input
-            type="url"
-            value={img}
-            onChange={(e) => setImg(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Dirección:
-          <input
-            type="text"
-            value={direccion}
-            onChange={(e) => setDireccion(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Sitio web:
-          <input
-            type="url"
-            value={web}
-            onChange={(e) => setWeb(e.target.value)}
-          />
-        </label>
-        <label>
-          Descripción:
-          <textarea
-            value={descripcion}
-            onChange={(e) => setDescripcion(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Agregar Restaurante</button>
+        <InputField
+          label="Nombre del restaurante"
+          type="text"
+          name="name"
+          placeholder="Ingrese el nombre del restaurante"
+          maxLength={100}
+          required
+        />
+        <FileField
+          label="Cargar imagen"
+          name="image"
+          accept="image/jpeg, image/png"
+          required
+        />
+        <InputField
+          label="Dirección"
+          type="text"
+          name="address"
+          placeholder="Ingrese la dirección del restaurante"
+          maxLength={200}
+          required
+        />
+        <InputField
+          label="Sitio web"
+          type="text"
+          name="web"
+          placeholder="http://www.ejemplo.com"
+          title="Incluya http:// o https://"
+        />
+        <TextAreaField
+          label="Descripción"
+          name="description"
+          placeholder="Describa brevemente el restaurante"
+          maxLength={500}
+          required
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? 'Agregando...' : 'Agregar Restaurante'}
+        </button>
       </form>
     </div>
   );
 };
 
+const InputField = ({ label, ...props }) => (
+  <label>
+    {label}
+    <input {...props} />
+  </label>
+);
+
+const FileField = ({ label, ...props }) => (
+  <label>
+    {label}
+    <input type="file" {...props} />
+  </label>
+);
+
+const TextAreaField = ({ label, ...props }) => (
+  <label>
+    {label}
+    <textarea {...props}></textarea>
+  </label>
+);
+
 export default AddSupplier;
+
