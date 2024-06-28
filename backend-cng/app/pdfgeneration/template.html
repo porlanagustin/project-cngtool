@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMERICAN EXPRESS - Detalles de Restaurantes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        #title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #restaurant-info {
+            margin-bottom: 20px;
+        }
+
+        #restaurant-info img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .restaurant-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .restaurant-description,
+        .restaurant-address,
+        .restaurant-web {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="title">AMERICAN EXPRESS</div>
+
+    {% for restaurante in restaurantes -%}
+    <div id="restaurant-info">
+        <div class="restaurant-name">{{restaurante.nombre}}</div>
+        <img src="{{restaurante.img}}" alt="Imagen del restaurante">
+        <div class="restaurant-description">{{restaurante.descripcion}}</div>
+        <div class="restaurant-address"><strong>Dirección:</strong> {{restaurante.direccion}}</div>
+        <div class="restaurant-web"><strong>Sitio Web:</strong> {{restaurante.web}}</div>
+    </div>
+    <br>
+    {%- endfor %}
+
+</body>
+</html>
