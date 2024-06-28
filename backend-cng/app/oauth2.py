@@ -27,11 +27,11 @@ def verify_access_token(token: str, credentials_exception):
 
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
 
-        id: str = str(payload.get("user_id"))
+        dni: str = str(payload.get("user_id"))
 
-        if id is None:
+        if dni is None:
             raise credentials_exception
-        token_data = schemas.TokenData(id=id)
+        token_data = schemas.TokenData(dni=dni)
 
     except JWTError:
         raise credentials_exception
@@ -43,6 +43,7 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
 
     actual_token = verify_access_token(token, credentials_exception)
 
-    user = db.query(models.User).filter(models.User.id == actual_token.id).first()
+    user = db.query(models.User).filter(models.User.dni == actual_token.dni).first()
     
     return user 
+
