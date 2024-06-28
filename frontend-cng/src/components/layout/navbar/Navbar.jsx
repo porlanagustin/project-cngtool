@@ -97,25 +97,25 @@ const Navbar = () => {
             )}
           </div>
         </div>
-
-        <div className="navbar-logo">
-          <Link to="" className="navbar-logo-link">
-            Concierge Tool
-          </Link>
-          <img
-            src="../../amexlogo.png"
-            alt="Amex Logo"
-            className="navbar-logo-img"
-          />
-        </div>
-
-        <div className="navbar-auth">
-          <Link to="/login" className="navbar-auth-link">
-            Login
-          </Link>
-          <Link to="/register" className="navbar-auth-link">
-            Register
-          </Link>
+        <div className="contenedorTituloAuth">
+          <div className="navbar-logo">
+            <Link to="" className="navbar-logo-link">
+              Concierge Tool
+            </Link>
+            <img
+              src="../../amexlogo.png"
+              alt="Amex Logo"
+              className="navbar-logo-img"
+            />
+          </div>
+          <div className="navbar-auth">
+            <Link to="/login" className="navbar-auth-link">
+              Login
+            </Link>
+            <Link to="/register" className="navbar-auth-link">
+              Register
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

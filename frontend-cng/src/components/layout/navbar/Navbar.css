@@ -59,8 +59,7 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  justify-content: start;
-  margin-left: 50px;
+  margin-bottom: 10px; /* Añadir margen inferior para separación en pantallas pequeñas */
 }
 
 .navbar-logo-link {
@@ -77,8 +76,8 @@
 .navbar-auth {
   display: flex;
   gap: 10px;
-  position: absolute;
-  right: 20px;
+  position: static; /* Cambia de absolute a static para que sea parte del flujo normal del documento */
+  margin-bottom: 10px; /* Añadir margen inferior para separación en pantallas pequeñas */
 }
 
 .navbar-auth-link {
@@ -98,4 +97,27 @@
 
 .navbar-auth-link:active {
   background-color: #ccc;
+}
+
+.contenedorTituloAuth {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .contenedorTituloAuth {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    margin-left: 0;
+  }
+
+  .navbar-auth {
+    margin-bottom: 0;
+  }
 }
