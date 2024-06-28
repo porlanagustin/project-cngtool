@@ -61,3 +61,7 @@ export const isLoggedIn = () => {
 export const logOut = () => {
     localStorage.clear();
 }
+
+export const newFunction = () => {
+    console.log("TEST")
+}
