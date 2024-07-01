@@ -15,8 +15,8 @@ const CalendarCommon = () => {
   ];
 
   return (
-    <div className="calendarStyles">
-      <Calendar localizer={localizer} events={events}></Calendar>
+    <div className="calendar-container">
+      <Calendar localizer={localizer} events={events} />
     </div>
   );
 };
