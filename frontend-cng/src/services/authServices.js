@@ -20,7 +20,7 @@ export const login = async (dataDNI, dataPassword) => {
         formData.append('password', dataPassword);
 
         const response = await axiosInstance.post('/login', formData);
-        return response?.data?.access_token
+        return response?.data
         
     } catch (error) {
         console.error("Error logging in:", error);
