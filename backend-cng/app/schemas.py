@@ -1,7 +1,5 @@
-from pydantic import BaseModel, EmailStr, Field
-from typing import Optional
+from pydantic import BaseModel
 from datetime import datetime
-from typing_extensions import Annotated
 
 class UserCreate(BaseModel):
     dni: int
