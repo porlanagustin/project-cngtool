@@ -1,7 +1,7 @@
 import "./Login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login, setToken } from "../../../services/authServices.js";
+import { login } from "../../../services/authServices.js";
 import Swal from "sweetalert2";
 
 const Login = () => {
@@ -11,19 +11,19 @@ const Login = () => {
 
   const loginRequest = async (dataDNI, dataPassword) => {
     try {
-      const token = await login(dataDNI, dataPassword);
+      const loggedIn = await login(dataDNI, dataPassword);
 
-      if (token) {
-        setToken(token);
+      if (loggedIn) {
+        navigate("/home");
       }
-
-      navigate("/home");
     } catch (error) {
+      console.error("Error en solicitud de inicio de sesión:", error);
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Error al iniciar sesion",
-        footer: '<a href="#">Solicitar acceso</a>',
+        title: "Credenciales incorrectas",
+        text: "Por favor, verifica tus credenciales e intenta nuevamente.",
+        footer:
+          '<a href="/register">Solicitar acceso o reseteo de password</a>',
       });
     }
   };
