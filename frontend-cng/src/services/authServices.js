@@ -1,67 +1,64 @@
-import { jwtDecode } from 'jwt-decode';
-import axiosInstance from '../axios/axiosInstance.js';
-
-export const setToken = (token) => {
-    localStorage.setItem('token', token)
-};
+import { jwtDecode } from "jwt-decode";
+import axiosInstance from "../axios/axiosInstance.js";
 
 export const getToken = () => {
-    const token = localStorage.getItem('token');
-    if(token){
-        return token;
-    }
-    return null;
-}
-
-export const login = async (dataDNI, dataPassword) => {
-    try {
-        const formData = new URLSearchParams();
-        formData.append('username', parseInt(dataDNI, 10));
-        formData.append('password', dataPassword);
-
-        const response = await axiosInstance.post('/login', formData);
-        return response?.data
-        
-    } catch (error) {
-        console.error("Error logging in:", error);
-    }
+  const token = localStorage.getItem("token");
+  if (token) {
+    return token;
+  }
+  return null;
 };
 
-export const getUserEmail = () => {
-    const token = getToken();
-    if(token){
-        const payLoad = jwtDecode(token);
-        return payLoad?.email
-    }
+export const login = async (dataDNI, dataPassword) => {
+  const formData = new URLSearchParams();
+  formData.append("username", parseInt(dataDNI, 10));
+  formData.append("password", dataPassword);
 
-    return null
-}
+  try {
+    const response = await axiosInstance.post("/login", formData);
+    if (response.data) {
+      localStorage.setItem("token", response.data.access_token);
+      return true;
+    }
+  } catch {
+    console.log("DENEGADO");
+  }
+};
 
 export const getUserRole = () => {
-    const token = getToken();
-    if(token){
-        const payLoad = jwtDecode(token);
-        return payLoad?.admin
-    }
-
-    return null
-}
-
-export const isLoggedIn = () => {
-    const token = getToken();
-
-    if(token){
-        // const payLoad = jwtDecode(token);
-        // const isLogin = Date.now() < payLoad.exp * 1000;
-        return true;
-    }
-    return false
-}
+  const token = getToken();
+  if (token) {
+    const payLoad = jwtDecode(token);
+    return payLoad?.admin;
+  }
+  return null;
+};
 
 export const logOut = () => {
-    localStorage.clear();
-}
+  localStorage.clear();
+};
 
-export const newFunction = () => {
-    console.log("TEST")
-}
+export const isLoggedIn = () => {
+  const token = getToken();
+
+  if (token) {
+    return true;
+  }
+  return false;
+};
+
+export const isLog = () => {
+  const token = getToken();
+
+  if (token) {
+    try {
+      const payLoad = jwtDecode(token);
+      const isLogin = Date.now() < payLoad.exp;
+      return isLogin;
+    } catch (error) {
+      console.error("Error decoding JWT:", error);
+      return false;
+    }
+  }
+  return false;
+};
