@@ -52,9 +52,9 @@ export const isLog = () => {
 
   if (token) {
     try {
-      const payLoad = jwtDecode(token);
-      const isLogin = Date.now() < payLoad.exp;
-      return isLogin;
+      // const payLoad = jwtDecode(token);
+      // const isLogin = Date.now() < payLoad.exp;
+      return true;
     } catch (error) {
       console.error("Error decoding JWT:", error);
       return false;

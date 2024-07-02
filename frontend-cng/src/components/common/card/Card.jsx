@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Card.css";
 
-const apiUrl = "http://127.0.0.1:8000/concierge";
+const apiUrl = "http://127.0.0.1:8000/restaurantsToPdf";
 
 const Card = ({ data }) => {
   const [selectedRows, setSelectedRows] = useState([]);
 
   const handleCheckboxChange = (rowIndex) => {
     const newSelectedRows = [...selectedRows];
+   
     if (newSelectedRows.includes(rowIndex)) {
       newSelectedRows.splice(newSelectedRows.indexOf(rowIndex), 1);
     } else {
@@ -20,6 +21,7 @@ const Card = ({ data }) => {
   const handleImprimirClick = () => {
     const filasSeleccionadas = selectedRows.map((rowIndex) => data[rowIndex]);
 
+    console.log(filasSeleccionadas)
     axios
       .post(apiUrl, filasSeleccionadas, { responseType: "arraybuffer" })
       .then((response) => {
@@ -28,7 +30,7 @@ const Card = ({ data }) => {
         const a = document.createElement("a");
 
         a.href = url;
-        a.download = "all_suppliers.pdf";
+        a.download = "PDFRESTAURANTS.pdf";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -71,9 +73,9 @@ const Card = ({ data }) => {
               <img src={row.img} alt="" />
             </figure>
             <div className="contenido-card">
-              <h3>{row.nombre}</h3>
-              <p>{row.descripcion}</p>
-              <p>Direccion: {row.direccion}</p>
+              <h3>{row.name}</h3>
+              <p>{row.description}</p>
+              <p>Direccion: {row.address}</p>
               <p>Web: {row.web}</p>
               <input
                 type="checkbox"

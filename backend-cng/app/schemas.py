@@ -18,11 +18,10 @@ class UserLogin(BaseModel):
 
 class DataRestaurant(BaseModel):
     name: str
-    image: str
+    img: str
     address: str
     web: str
     description: str
-    image: str
 
 class PostCreate(DataRestaurant):
     pass
