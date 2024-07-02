@@ -90,7 +90,7 @@ const Navbar = () => {
               className="navbar-button"
               onClick={() => handleMenuClick(setCalendarOpen)}
             >
-              CALENDARIO DE EVENTOS
+              Calendario de Eventos
             </button>
             {calendarOpen && (
               <div className="navbar-menu">
@@ -109,19 +109,8 @@ const Navbar = () => {
             <Link to="" className="navbar-logo-link">
               Concierge Tool
             </Link>
-            <img
-              src="../../amexlogo.png"
-              alt="Amex Logo"
-              className="navbar-logo-img"
-            />
           </div>
           <div className="navbar-auth">
-            <Link to="/login" className="navbar-auth-link">
-              Login
-            </Link>
-            <Link to="/register" className="navbar-auth-link">
-              Register
-            </Link>
             <button onClick={handleLogout} className="navbar-auth-link">
               Logout
             </button>

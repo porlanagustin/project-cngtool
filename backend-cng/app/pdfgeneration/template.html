@@ -50,10 +50,10 @@
 
     {% for restaurante in restaurantes -%}
     <div id="restaurant-info">
-        <div class="restaurant-name">{{restaurante.nombre}}</div>
+        <div class="restaurant-name">{{restaurante.description}}</div>
         <img src="{{restaurante.img}}" alt="Imagen del restaurante">
-        <div class="restaurant-description">{{restaurante.descripcion}}</div>
-        <div class="restaurant-address"><strong>Dirección:</strong> {{restaurante.direccion}}</div>
+        <div class="restaurant-description">{{restaurante.description}}</div>
+        <div class="restaurant-address"><strong>Dirección:</strong> {{restaurante.address}}</div>
         <div class="restaurant-web"><strong>Sitio Web:</strong> {{restaurante.web}}</div>
     </div>
     <br>

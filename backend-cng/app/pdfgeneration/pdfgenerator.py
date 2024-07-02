@@ -17,28 +17,28 @@ try:
 except Exception as e:
     raise Exception(f"Error al configurar PDFKit: {e}")
 
-def createfirstpdf(suppliers_list):
+def createfirstpdf(data_list):
     # VALIDAR ENTRADA
-    if not isinstance(suppliers_list, list):
+    if not isinstance(data_list, list):
         raise ValueError("La entrada debe ser una lista de proveedores")
 
     # VARIABLE DE RESTAURANTES (PROVEEDORES)
     all_suppliers_info = []
     try:
-        for suppliers in suppliers_list:
-            nombre = suppliers.nombre
-            img = suppliers.img
-            direccion = suppliers.direccion
-            web = suppliers.web
-            descripcion = suppliers.descripcion
-            supplier_info = {
-                'nombre': nombre, 
+        for data in data_list:
+            name = data.name
+            img = data.img
+            address = data.address
+            web = data.web
+            description = data.description
+            restaurant_info = {
+                'nombre': name, 
                 'img': img, 
-                'direccion': direccion, 
+                'direccion': address, 
                 'web': web, 
-                'descripcion': descripcion
+                'description': description
             }
-            all_suppliers_info.append(supplier_info)
+            all_suppliers_info.append(restaurant_info)
     except AttributeError as e:
         raise AttributeError(f"Error al procesar la lista de proveedores: {e}")
 
