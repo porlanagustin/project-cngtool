@@ -44,6 +44,62 @@ const data = [
     description:
       "Aunque siempre hay un buen número de comensales de empresa a la hora de comer, el ambiente y el estilo de este restaurante, situado en un sótano, le dan un toque claramente nocturno. Cuenta con una gran barra que se extiende a lo ancho de la sala y presenta un aspecto contemporáneo, dominado por la presencia de hormigón y metal. Hay muchas mesas y taburetes de bar, pero si quieres una experiencia más relajada, pide uno de los sofás de cuero con sus mesas de comedor bajas. El menú ofrece posibilidades para todos los gustos, ya que es una mezcla de platos locales bien conocidos y otros cuya inspiración procede del Mediterráneo. El equipo de cocina se maneja bien, lo que significa que puedes empezar con unas deliciosas Empanadas de cordero estofado y pasar a unos Culurgiones rellenos de salmón o algo de la plancha, como una Brocheta de langostinos o una Milanesa de lomo de ternera.",
   },
+  {
+    name: "Basa",
+    img: "https://www.rutiniwines.com/wp-content/uploads/2023/10/Fine-Dining-en-Trescha-Guest-Series-05-20-10.jpg",
+    address: "Basavilbaso 1328, Buenos Aires, C1006AAD, Argentina",
+    web: "https://basabar.com.ar/",
+    description:
+      "Aunque siempre hay un buen número de comensales de empresa a la hora de comer, el ambiente y el estilo de este restaurante, situado en un sótano, le dan un toque claramente nocturno. Cuenta con una gran barra que se extiende a lo ancho de la sala y presenta un aspecto contemporáneo, dominado por la presencia de hormigón y metal. Hay muchas mesas y taburetes de bar, pero si quieres una experiencia más relajada, pide uno de los sofás de cuero con sus mesas de comedor bajas. El menú ofrece posibilidades para todos los gustos, ya que es una mezcla de platos locales bien conocidos y otros cuya inspiración procede del Mediterráneo. El equipo de cocina se maneja bien, lo que significa que puedes empezar con unas deliciosas Empanadas de cordero estofado y pasar a unos Culurgiones rellenos de salmón o algo de la plancha, como una Brocheta de langostinos o una Milanesa de lomo de ternera.",
+  },
+  {
+    name: "Basa",
+    img: "https://www.rutiniwines.com/wp-content/uploads/2023/10/Fine-Dining-en-Trescha-Guest-Series-05-20-10.jpg",
+    address: "Basavilbaso 1328, Buenos Aires, C1006AAD, Argentina",
+    web: "https://basabar.com.ar/",
+    description:
+      "Aunque siempre hay un buen número de comensales de empresa a la hora de comer, el ambiente y el estilo de este restaurante, situado en un sótano, le dan un toque claramente nocturno. Cuenta con una gran barra que se extiende a lo ancho de la sala y presenta un aspecto contemporáneo, dominado por la presencia de hormigón y metal. Hay muchas mesas y taburetes de bar, pero si quieres una experiencia más relajada, pide uno de los sofás de cuero con sus mesas de comedor bajas. El menú ofrece posibilidades para todos los gustos, ya que es una mezcla de platos locales bien conocidos y otros cuya inspiración procede del Mediterráneo. El equipo de cocina se maneja bien, lo que significa que puedes empezar con unas deliciosas Empanadas de cordero estofado y pasar a unos Culurgiones rellenos de salmón o algo de la plancha, como una Brocheta de langostinos o una Milanesa de lomo de ternera.",
+  },
+  {
+    name: "Basa",
+    img: "https://www.rutiniwines.com/wp-content/uploads/2023/10/Fine-Dining-en-Trescha-Guest-Series-05-20-10.jpg",
+    address: "Basavilbaso 1328, Buenos Aires, C1006AAD, Argentina",
+    web: "https://basabar.com.ar/",
+    description:
+      "Aunque siempre hay un buen número de comensales de empresa a la hora de comer, el ambiente y el estilo de este restaurante, situado en un sótano, le dan un toque claramente nocturno. Cuenta con una gran barra que se extiende a lo ancho de la sala y presenta un aspecto contemporáneo, dominado por la presencia de hormigón y metal. Hay muchas mesas y taburetes de bar, pero si quieres una experiencia más relajada, pide uno de los sofás de cuero con sus mesas de comedor bajas. El menú ofrece posibilidades para todos los gustos, ya que es una mezcla de platos locales bien conocidos y otros cuya inspiración procede del Mediterráneo. El equipo de cocina se maneja bien, lo que significa que puedes empezar con unas deliciosas Empanadas de cordero estofado y pasar a unos Culurgiones rellenos de salmón o algo de la plancha, como una Brocheta de langostinos o una Milanesa de lomo de ternera.",
+  },
+  {
+    name: "Basa",
+    img: "https://www.rutiniwines.com/wp-content/uploads/2023/10/Fine-Dining-en-Trescha-Guest-Series-05-20-10.jpg",
+    address: "Basavilbaso 1328, Buenos Aires, C1006AAD, Argentina",
+    web: "https://basabar.com.ar/",
+    description:
+      "Aunque siempre hay un buen número de comensales de empresa a la hora de comer, el ambiente y el estilo de este restaurante, situado en un sótano, le dan un toque claramente nocturno. Cuenta con una gran barra que se extiende a lo ancho de la sala y presenta un aspecto contemporáneo, dominado por la presencia de hormigón y metal. Hay muchas mesas y taburetes de bar, pero si quieres una experiencia más relajada, pide uno de los sofás de cuero con sus mesas de comedor bajas. El menú ofrece posibilidades para todos los gustos, ya que es una mezcla de platos locales bien conocidos y otros cuya inspiración procede del Mediterráneo. El equipo de cocina se maneja bien, lo que significa que puedes empezar con unas deliciosas Empanadas de cordero estofado y pasar a unos Culurgiones rellenos de salmón o algo de la plancha, como una Brocheta de langostinos o una Milanesa de lomo de ternera.",
+  },
+  {
+    name: "Basa",
+    img: "https://www.rutiniwines.com/wp-content/uploads/2023/10/Fine-Dining-en-Trescha-Guest-Series-05-20-10.jpg",
+    address: "Basavilbaso 1328, Buenos Aires, C1006AAD, Argentina",
+    web: "https://basabar.com.ar/",
+    description:
+      "Aunque siempre hay un buen número de comensales de empresa a la hora de comer, el ambiente y el estilo de este restaurante, situado en un sótano, le dan un toque claramente nocturno. Cuenta con una gran barra que se extiende a lo ancho de la sala y presenta un aspecto contemporáneo, dominado por la presencia de hormigón y metal. Hay muchas mesas y taburetes de bar, pero si quieres una experiencia más relajada, pide uno de los sofás de cuero con sus mesas de comedor bajas. El menú ofrece posibilidades para todos los gustos, ya que es una mezcla de platos locales bien conocidos y otros cuya inspiración procede del Mediterráneo. El equipo de cocina se maneja bien, lo que significa que puedes empezar con unas deliciosas Empanadas de cordero estofado y pasar a unos Culurgiones rellenos de salmón o algo de la plancha, como una Brocheta de langostinos o una Milanesa de lomo de ternera.",
+  },
+  {
+    name: "Basa",
+    img: "https://www.rutiniwines.com/wp-content/uploads/2023/10/Fine-Dining-en-Trescha-Guest-Series-05-20-10.jpg",
+    address: "Basavilbaso 1328, Buenos Aires, C1006AAD, Argentina",
+    web: "https://basabar.com.ar/",
+    description:
+      "Aunque siempre hay un buen número de comensales de empresa a la hora de comer, el ambiente y el estilo de este restaurante, situado en un sótano, le dan un toque claramente nocturno. Cuenta con una gran barra que se extiende a lo ancho de la sala y presenta un aspecto contemporáneo, dominado por la presencia de hormigón y metal. Hay muchas mesas y taburetes de bar, pero si quieres una experiencia más relajada, pide uno de los sofás de cuero con sus mesas de comedor bajas. El menú ofrece posibilidades para todos los gustos, ya que es una mezcla de platos locales bien conocidos y otros cuya inspiración procede del Mediterráneo. El equipo de cocina se maneja bien, lo que significa que puedes empezar con unas deliciosas Empanadas de cordero estofado y pasar a unos Culurgiones rellenos de salmón o algo de la plancha, como una Brocheta de langostinos o una Milanesa de lomo de ternera.",
+  },
+  {
+    name: "Basa",
+    img: "https://www.rutiniwines.com/wp-content/uploads/2023/10/Fine-Dining-en-Trescha-Guest-Series-05-20-10.jpg",
+    address: "Basavilbaso 1328, Buenos Aires, C1006AAD, Argentina",
+    web: "https://basabar.com.ar/",
+    description:
+      "Aunque siempre hay un buen número de comensales de empresa a la hora de comer, el ambiente y el estilo de este restaurante, situado en un sótano, le dan un toque claramente nocturno. Cuenta con una gran barra que se extiende a lo ancho de la sala y presenta un aspecto contemporáneo, dominado por la presencia de hormigón y metal. Hay muchas mesas y taburetes de bar, pero si quieres una experiencia más relajada, pide uno de los sofás de cuero con sus mesas de comedor bajas. El menú ofrece posibilidades para todos los gustos, ya que es una mezcla de platos locales bien conocidos y otros cuya inspiración procede del Mediterráneo. El equipo de cocina se maneja bien, lo que significa que puedes empezar con unas deliciosas Empanadas de cordero estofado y pasar a unos Culurgiones rellenos de salmón o algo de la plancha, como una Brocheta de langostinos o una Milanesa de lomo de ternera.",
+  },
 ];
 
 const Restaurants = () => {

@@ -1,4 +1,11 @@
-/* Card.css */
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
 .contenedorGeneral {
   width: 100%;
   display: flex;
@@ -18,8 +25,10 @@
 }
 
 .card {
-  width: 300px;
-  height: auto;
+  margin: 10px;
+
+  width: 400px;
+  height: 650px;
   border-radius: 8px;
   overflow: hidden;
   background-color: #d7d6d6;
@@ -36,14 +45,14 @@
 
 .card-image {
   width: 100%;
-  height: 150px;
+  height: 250px;
   object-fit: cover;
 }
 
 .card-content {
   padding: 16px;
-  color: #fff;
-  height: 250px;
+  color: #000000;
+  height: 350px; /* Ajustado para hacer espacio para los detalles */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -86,16 +95,42 @@
 }
 
 .card-details {
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  max-height: 0; /* Asegúrate de que la altura inicial es 0 */
+  overflow-y: auto; /* Agrega un scroll vertical si el contenido es muy largo */
   padding: 16px;
+  font-size: 16px;
+
+  color: white;
   background-color: #9e9a9a;
-  transition: opacity 0.3s ease;
-  opacity: 0;
-  height: 0;
+  transition: opacity 0.3s ease, max-height 0.3s ease; /* Agrega transición para la altura máxima */
+  opacity: 0; /* Asegúrate de que esté oculto */
+}
+
+/* Estilos del scroll */
+.card-details::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+.card-details::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color del track del scrollbar */
+  border-radius: 10px; /* Radio de bordes del track */
+}
+
+.card-details::-webkit-scrollbar-thumb {
+  background: #011627; /* Color de la parte del scrollbar que se mueve */
+  border-radius: 10px; /* Radio de bordes del scrollbar */
+}
+
+.card-details::-webkit-scrollbar-thumb:hover {
+  background: #577590; /* Color del scrollbar al pasar el ratón por encima */
 }
 
 .card-details.expanded {
-  opacity: 1;
-  height: auto;
+  opacity: 1; /* Muestra el contenido */
+  max-height: 400px; /* Ajusta la altura máxima para cuando la carta está expandida */
 }
 
 .card-description {
@@ -104,7 +139,10 @@
 }
 
 .checkbox-container {
+  width: 100%;
+  height: auto;
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-top: 10px;
 }
@@ -137,13 +175,6 @@
 
 .buttonPDF:hover {
   background-color: #17a34a;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
 }
 
 @media (max-width: 768px) {

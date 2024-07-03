@@ -32,18 +32,16 @@ const RestaurantCard = ({
       </button>
       <div className={`card-details ${isExpanded ? "expanded" : ""}`}>
         <p className="card-description">{restaurant.description}</p>
-        {isExpanded && (
-          <div className="checkbox-container">
-            <input
-              type="checkbox"
-              checked={isSelected}
-              onChange={() => handleCheckboxChange(index)}
-              className="card-checkbox"
-            />
-            <label className="card-checkbox-label">Seleccionar</label>
-          </div>
-        )}
       </div>
+    </div>
+    <div className="checkbox-container">
+      <input
+        type="checkbox"
+        checked={isSelected}
+        onChange={() => handleCheckboxChange(index)}
+        className="card-checkbox"
+      />
+      <label className="card-checkbox-label">Seleccionar</label>
     </div>
   </div>
 );
