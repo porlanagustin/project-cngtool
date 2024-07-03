@@ -6,130 +6,194 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
-.container-card {
+.contenedorGeneral {
   width: 100%;
   display: flex;
-  max-width: 1100px;
-  margin: auto;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-.title-cards {
+.card-container {
   width: 100%;
-  max-width: 1080px;
-  margin: auto;
-  padding: 20px;
-  margin-top: 20px;
-  text-align: center;
-  color: #7a7a7a;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
 }
 
 .card {
-  width: calc(33.33% - 40px);
-  margin: 20px;
-  border-radius: 6px;
+  margin: 10px;
+
+  width: 400px;
+  height: 650px;
+  border-radius: 8px;
   overflow: hidden;
-  background: #fff;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
-  transition: all 400ms ease-out;
-  cursor: default;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-}
-
-.puntuacion {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.card .contenido-card {
-  padding: 15px;
-  text-align: center;
-}
-
-.card .contenido-card h3 {
-  margin-bottom: 15px;
-  color: #7a7a7a;
-}
-
-.card .contenido-card p {
-  line-height: 1.8;
-  color: #6a6a6a;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.card .contenido-card .puntuacion {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.card .contenido-card .puntuacion .star {
-  color: #f0c14b; /* Color de las estrellas */
-  font-size: 18px;
-  margin-right: 4px;
-}
-
-.card .contenido-card .puntuacion .star.empty {
-  color: #ccc; /* Color de estrellas vacías */
-}
-
-.card .contenido-card a {
-  display: inline-block;
-  padding: 10px;
-  margin-top: 10px;
-  text-decoration: none;
-  color: #2fb4cc;
-  border: 1px solid #2fb4cc;
-  border-radius: 4px;
-  transition: all 400ms ease;
-}
-
-.card .contenido-card a:hover {
-  background: #2fb4cc;
-  color: #fff;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.buttonPDF {
-  background-color: #2fb4cc;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 4px;
+  background-color: #d7d6d6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
   cursor: pointer;
 }
 
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.856);
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+  color: #000000;
+  height: 350px; /* Ajustado para hacer espacio para los detalles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.4em;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.card-address {
+  font-size: 0.9em;
+  margin: 0 0 8px;
+}
+
+.card-web {
+  color: #1db954;
+  text-decoration: none;
+}
+
+.card-web:hover {
+  text-decoration: underline;
+}
+
+.expand-button {
+  background-color: #1db954;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.expand-button:hover {
+  background-color: #17a34a;
+}
+
+.card-details {
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  max-height: 0; /* Asegúrate de que la altura inicial es 0 */
+  overflow-y: auto; /* Agrega un scroll vertical si el contenido es muy largo */
+  padding: 16px;
+  font-size: 16px;
+
+  color: white;
+  background-color: #9e9a9a;
+  transition: opacity 0.3s ease, max-height 0.3s ease; /* Agrega transición para la altura máxima */
+  opacity: 0; /* Asegúrate de que esté oculto */
+}
+
+/* Estilos del scroll */
+.card-details::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+.card-details::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color del track del scrollbar */
+  border-radius: 10px; /* Radio de bordes del track */
+}
+
+.card-details::-webkit-scrollbar-thumb {
+  background: #011627; /* Color de la parte del scrollbar que se mueve */
+  border-radius: 10px; /* Radio de bordes del scrollbar */
+}
+
+.card-details::-webkit-scrollbar-thumb:hover {
+  background: #577590; /* Color del scrollbar al pasar el ratón por encima */
+}
+
+.card-details.expanded {
+  opacity: 1; /* Muestra el contenido */
+  max-height: 400px; /* Ajusta la altura máxima para cuando la carta está expandida */
+}
+
+.card-description {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.checkbox-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-checkbox {
+  margin-right: 8px;
+}
+
+.card-checkbox-label {
+  font-size: 0.9em;
+}
+
+.button-container {
+  text-align: center;
+  margin: 24px 0;
+  clear: both;
+}
+
+.buttonPDF {
+  background-color: #1db954;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
 .buttonPDF:hover {
-  background-color: #1c7d99;
+  background-color: #17a34a;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .card {
-    width: calc(50% - 30px);
+    width: 100%;
+    height: auto;
   }
-}
 
-@media only screen and (max-width: 480px) {
-  .card {
-    width: calc(100% - 20px);
-    margin: 10px;
+  .card-image {
+    height: 200px;
+  }
+
+  .card-content {
+    height: auto;
+  }
+
+  .expand-button {
+    padding: 8px 14px;
   }
 }
