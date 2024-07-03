@@ -7,8 +7,10 @@ import ProtectLogin from "./ProtectedRoutes/ProtectLogin.jsx";
 import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes.jsx";
 
 const AppRouter = () => {
+
   return (
     <Routes>
+
       <Route element={<ProtectedRoutes><Layout></Layout></ProtectedRoutes>}>
         <Route key={"login"} path={"/"} element={<ProtectLogin><Login></Login></ProtectLogin>}></Route>
 

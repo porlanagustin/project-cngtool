@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { logOut } from "../../../services/authServices.js";
+import { deleteToken} from "../../../services/authServices.js";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
-    logOut();
+    deleteToken();
     navigate("/");
   };
 
