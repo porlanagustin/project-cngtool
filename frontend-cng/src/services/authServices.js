@@ -34,8 +34,8 @@ export const getUserRole = () => {
   return null;
 };
 
-export const logOut = () => {
-  localStorage.clear();
+export const deleteToken = () => {
+  localStorage.removeItem('token');
 };
 
 export const isLoggedIn = () => {
