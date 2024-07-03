@@ -4,12 +4,57 @@ import "./Card.css";
 
 const apiUrl = "http://127.0.0.1:8000/restaurantsToPdf";
 
+const RestaurantCard = ({
+  restaurant,
+  index,
+  handleCheckboxChange,
+  isSelected,
+  handleExpandClick,
+  isExpanded,
+}) => (
+  <div key={index} className="card">
+    <img src={restaurant.img} alt={restaurant.name} className="card-image" />
+    <div className="card-content">
+      <h2 className="card-title">{restaurant.name}</h2>
+      <p className="card-address">{restaurant.address}</p>
+      {restaurant.web && (
+        <a
+          href={restaurant.web}
+          className="card-web"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {restaurant.web}
+        </a>
+      )}
+      <button className="expand-button" onClick={handleExpandClick}>
+        {isExpanded ? "Cerrar" : "Ver más"}
+      </button>
+      <div className={`card-details ${isExpanded ? "expanded" : ""}`}>
+        <p className="card-description">{restaurant.description}</p>
+        {isExpanded && (
+          <div className="checkbox-container">
+            <input
+              type="checkbox"
+              checked={isSelected}
+              onChange={() => handleCheckboxChange(index)}
+              className="card-checkbox"
+            />
+            <label className="card-checkbox-label">Seleccionar</label>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+);
+
 const Card = ({ data }) => {
   const [selectedRows, setSelectedRows] = useState([]);
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
   const handleCheckboxChange = (rowIndex) => {
     const newSelectedRows = [...selectedRows];
-   
+
     if (newSelectedRows.includes(rowIndex)) {
       newSelectedRows.splice(newSelectedRows.indexOf(rowIndex), 1);
     } else {
@@ -21,7 +66,7 @@ const Card = ({ data }) => {
   const handleImprimirClick = () => {
     const filasSeleccionadas = selectedRows.map((rowIndex) => data[rowIndex]);
 
-    console.log(filasSeleccionadas)
+    console.log(filasSeleccionadas);
     axios
       .post(apiUrl, filasSeleccionadas, { responseType: "arraybuffer" })
       .then((response) => {
@@ -41,49 +86,21 @@ const Card = ({ data }) => {
       });
   };
 
-  // const renderStars = (puntuacion) => {
-  //   const stars = [];
-  //   const totalStars = 5;
-  //   const roundedRating = Math.round(puntuacion * 2) / 2;
-
-  //   for (let i = 1; i <= totalStars; i++) {
-  //     if (i <= roundedRating) {
-  //       stars.push(
-  //         <span key={i} className="star">
-  //           &#9733;
-  //         </span>
-  //       );
-  //     } else {
-  //       stars.push(
-  //         <span key={i} className="star empty">
-  //           &#9734;
-  //         </span>
-  //       );
-  //     }
-  //   }
-  //   return stars;
-  // };
-
   return (
-    <div>
-      <div className="container-card">
-        {data.map((row, rowIndex) => (
-          <div className="card" key={rowIndex}>
-            <figure>
-              <img src={row.img} alt="" />
-            </figure>
-            <div className="contenido-card">
-              <h3>{row.name}</h3>
-              <p>{row.description}</p>
-              <p>Direccion: {row.address}</p>
-              <p>Web: {row.web}</p>
-              <input
-                type="checkbox"
-                checked={selectedRows.includes(rowIndex)}
-                onChange={() => handleCheckboxChange(rowIndex)}
-              />
-            </div>
-          </div>
+    <div className="contenedorGeneral">
+      <div className="card-container">
+        {data.map((restaurant, index) => (
+          <RestaurantCard
+            key={index}
+            restaurant={restaurant}
+            index={index}
+            handleCheckboxChange={handleCheckboxChange}
+            isSelected={selectedRows.includes(index)}
+            handleExpandClick={() =>
+              setExpandedIndex(expandedIndex === index ? null : index)
+            }
+            isExpanded={expandedIndex === index}
+          />
         ))}
       </div>
       <div className="button-container">
@@ -92,47 +109,6 @@ const Card = ({ data }) => {
         </button>
       </div>
     </div>
-
-    // <div>
-    //   <div className="container-card">
-    //     {data.map((row, rowIndex) => (
-    //       <div className="card" key={rowIndex}>
-    //         <figure>
-    //           <img src={row.img} alt="" />
-    //           <div className="puntuacion">
-    //             {renderStars(row.puntuacion)}
-    //             <span>({row.puntuacion})</span>
-    //           </div>
-    //         </figure>
-    //         <div className="contenido-card">
-    //           <h3>{row.nombre}</h3>
-    //           <p>{row.descripcion}</p>
-    //           <p>Dirección: {row.direccion}</p>
-    //           <p>
-    //             Web:{" "}
-    //             <a href={row.web} target="_blank" rel="noopener noreferrer">
-    //               {row.web}
-    //             </a>
-    //           </p>
-
-    //           <label className="checkbox-label">
-    //             <input
-    //               type="checkbox"
-    //               checked={selectedRows.includes(rowIndex)}
-    //               onChange={() => handleCheckboxChange(rowIndex)}
-    //             />
-    //             <span>Seleccionar</span>
-    //           </label>
-    //         </div>
-    //       </div>
-    //     ))}
-    //   </div>
-    //   <div className="button-container">
-    //     <button className="buttonPDF" onClick={handleImprimirClick}>
-    //       Imprimir PDF
-    //     </button>
-    //   </div>
-    // </div>
   );
 };
 
