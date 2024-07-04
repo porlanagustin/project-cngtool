@@ -64,7 +64,6 @@ const Card = ({ data }) => {
   const handleImprimirClick = () => {
     const filasSeleccionadas = selectedRows.map((rowIndex) => data[rowIndex]);
 
-    console.log(filasSeleccionadas);
     axios
       .post(apiUrl, filasSeleccionadas, { responseType: "arraybuffer" })
       .then((response) => {
@@ -78,6 +77,7 @@ const Card = ({ data }) => {
         a.click();
         document.body.removeChild(a);
         window.URL.revokeObjectURL(url);
+        
       })
       .catch((error) => {
         console.log("Error al realizar la solicitud:", error);
