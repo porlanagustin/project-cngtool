@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import "./AddSupplier.css";
-import { getToken } from "../../../services/authServices";
+import { uploadRestaurant } from "../../../services/restaurantService";
 
 const AddSupplier = () => {
   const [loading, setLoading] = useState(false);
@@ -14,19 +14,9 @@ const AddSupplier = () => {
     setError(null);
 
     const data = new FormData(e.target);
-    const token = getToken();
 
     try {
-      const response = await axios.post(
-        "http://localhost:8000/manageSupplier/uploadRestaurant",
-        data,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = uploadRestaurant(data);
 
       Swal.fire({
         position: "top-end",
@@ -38,10 +28,7 @@ const AddSupplier = () => {
 
       e.target.reset();
     } catch (error) {
-      console.error("Error al agregar el restaurante:", error);
-      setError(
-        "Hubo un error al agregar el restaurante. Por favor, inténtelo de nuevo."
-      );
+      console.log("Error en formulario para agregar restaurante", error);
     } finally {
       setLoading(false);
     }

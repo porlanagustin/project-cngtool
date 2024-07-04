@@ -10,24 +10,16 @@ export const getToken = () => {
 };
 
 export const login = async (dataDNI, dataPassword) => {
-  // const formData = new URLSearchParams();
-  // formData.append("username", parseInt(dataDNI, 10));
-  // formData.append("password", dataPassword);
-
-  // try {
-  //   const response = await axiosInstance.post("/login", formData);
-  //   if (response.data) {
-  //     localStorage.setItem("token", response.data.access_token);
-  //     return true;
-  //   }
+  const formData = new URLSearchParams();
+  formData.append("username", parseInt(dataDNI, 10));
+  formData.append("password", dataPassword);
 
   try {
-    console.log(dataDNI, dataPassword);
-    localStorage.setItem(
-      "token",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozOTQ2NjIyNSwicm9sZSI6InVzZXIiLCJleHAiOjE3MjAxNjAxMTZ9.C-qovsaGHkCfZ-ZLCvAIYe6uWQsglEQOp5-pHFt6MJc"
-    );
-    return true;
+    const response = await axiosInstance.post("/login", formData);
+    if (response.data) {
+      localStorage.setItem("token", response.data.access_token);
+      return true;
+    }
   } catch {
     console.log("DENEGADO");
   }

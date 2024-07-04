@@ -11,19 +11,10 @@ const Login = () => {
 
   const loginRequest = async (dataDNI, dataPassword) => {
     try {
-      // const loggedIn = await login(dataDNI, dataPassword);
-      // if (loggedIn) {
-      //   navigate("/home");
-      // }
-
-      // LOGIN TRUCHO (BORRAR DESPUES)
-
-      const login = true;
-
-      if (login) {
+      const loggedIn = await login(dataDNI, dataPassword);
+      if (loggedIn) {
         navigate("/home");
       }
-      
     } catch (error) {
       console.error("Error en solicitud de inicio de sesión:", error);
       Swal.fire({
