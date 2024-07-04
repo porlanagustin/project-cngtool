@@ -12,7 +12,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  background-color: #121212;
+  padding-top: 10px;
 }
 
 .card-container {
@@ -27,7 +28,7 @@
 .card {
   margin: 10px;
 
-  width: 400px;
+  width: 350px;
   height: 650px;
   border-radius: 8px;
   overflow: hidden;
@@ -106,7 +107,7 @@
   font-size: 16px;
 
   color: white;
-  background-color: #9e9a9a;
+  background-color: #c1bdbd;
   transition: opacity 0.3s ease, max-height 0.3s ease; /* Agrega transición para la altura máxima */
   opacity: 0; /* Asegúrate de que esté oculto */
 }
