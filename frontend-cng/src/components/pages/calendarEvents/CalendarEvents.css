@@ -1,6 +1,23 @@
-.calendarContainer{
-    display: flex;
-    justify-content: center;
-    margin: 50px;
+.calendarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #121212;
 }
-  
+
+.containerForm {
+  margin: 50px;
+  color: white;
+}
+.formButton {
+  border: none;
+  margin-top: 10px;
+  background-color: green;
+  transition: transform 0.3s ease; /* Añade una transición para un efecto suave */
+}
+
+.formButton:hover {
+  transform: scale(1.1); /* Ajusta el valor de scale según el efecto deseado */
+}
