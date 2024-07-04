@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #1976d2;
+  background-color: #262626;
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@
 }
 
 .navbar-button {
-  background-color: #1976d2;
+  background-color: #255c99;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -35,7 +35,8 @@
 }
 
 .navbar-button:hover {
-  background-color: #155a8a;
+  background-color: #7ea3cc;
+  color: black;
 }
 
 .navbar-menu {
@@ -102,7 +103,7 @@
 }
 
 .navbar-auth button {
-  background: red;
+  background: rgb(124, 123, 123);
   border: none;
   color: white;
   cursor: pointer;
@@ -111,4 +112,5 @@
 
 .navbar-auth button:hover {
   text-decoration: underline;
+  background-color: #a4161a;
 }

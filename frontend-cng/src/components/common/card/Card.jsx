@@ -37,11 +37,15 @@ const RestaurantCard = ({
     <div className="checkbox-container">
       <input
         type="checkbox"
+        id={`card-checkbox-${index}`} // Asegúrate de que el ID sea único
         checked={isSelected}
         onChange={() => handleCheckboxChange(index)}
         className="card-checkbox"
       />
-      <label className="card-checkbox-label">Seleccionar</label>
+      <label htmlFor={`card-checkbox-${index}`} className="card-checkbox-label">
+        Seleccionar
+      </label>{" "}
+      {/* Use htmlFor */}
     </div>
   </div>
 );

@@ -69,15 +69,6 @@ const data = [
     description:
       "Le Bernardin, bajo la dirección del chef Éric Ripert, es un restaurante de alta gama en Nueva York conocido por su enfoque en la cocina francesa refinada con un énfasis especial en los mariscos frescos. El restaurante ha ganado reconocimiento internacional por su calidad culinaria y su servicio excepcional, ofreciendo un menú que combina técnicas clásicas con un enfoque moderno para presentar platos de mariscos de manera exquisita y elegante. Le Bernardin es una experiencia gastronómica de lujo que celebra lo mejor de la cocina francesa.",
   },
-  {
-    name: "D.O.M.",
-    img: "https://i0.wp.com/noma.dk/wp-content/uploads/2023/04/DSC_4038_aRGB_High-large-JPG.jpg?ssl=1",
-    address:
-      "Rua Barão de Capanema, 549 - Jardim Paulista, São Paulo - SP, 01411-001, Brasil",
-    web: "https://www.domrestaurante.com.br/",
-    description:
-      "D.O.M., dirigido por Alex Atala, es un restaurante en São Paulo que ofrece una cocina brasileña contemporánea que resalta la riqueza y diversidad de los ingredientes autóctonos de Brasil. Atala es conocido por su enfoque innovador en la cocina brasileña, utilizando ingredientes nativos y técnicas modernas para crear platos que reflejan la biodiversidad del país. El restaurante ofrece un menú degustación que explora sabores locales y técnicas culinarias avanzadas, proporcionando a los comensales una experiencia gastronómica única en el corazón de São Paulo.",
-  },
 ];
 
 const Restaurants = () => {
