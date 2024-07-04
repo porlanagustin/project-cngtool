@@ -4,22 +4,31 @@ import Layout from "../components/layout/Layout";
 import { routes } from "./menuRoutes.js";
 import Login from "../components/pages/login/Login.jsx";
 import ProtectLogin from "./ProtectedRoutes/ProtectLogin.jsx";
+import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes.jsx";
 
 const AppRouter = () => {
 
-  return (
-    <Routes>
-      <Route element={<ProtectedRoutes><Layout></Layout></ProtectedRoutes>}>
-        <Route key={"login"} path={"/"} element={<ProtectLogin><Login></Login></ProtectLogin>}></Route>
+return (
+  <Routes>
+    <Route element={<ProtectedRoutes><Layout /></ProtectedRoutes>}>
+      <Route key={"login"} path={"/"} element={<ProtectLogin><Login /></ProtectLogin>} />
 
-        {routes.map(({ id, path, Element }) => (
-          <Route key={id} path={path} element={<Element></Element>}></Route>
-        ))}
-      </Route>
+      {routes.map(({ id, path, Element }) => (
+        <Route
+          key={id}
+          path={path}
+          element={
+            <ProtectedRoutes>
+              <Element />
+            </ProtectedRoutes>
+          }
+        />
+      ))}
+    </Route>
 
-      <Route path="*" element={<RouteNotFound></RouteNotFound>}></Route>
-    </Routes>
-  );
-};
+    <Route path="*" element={<RouteNotFound />} />
+  </Routes>
+);
 
 export default AppRouter;
+
