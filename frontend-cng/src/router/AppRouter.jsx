@@ -7,41 +7,28 @@ import ProtectLogin from "./ProtectedRoutes/ProtectLogin.jsx";
 import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes.jsx";
 
 const AppRouter = () => {
-  return (
-    <Routes>
-      <Route
-        element={
-          <ProtectedRoutes>
-            <Layout></Layout>
-          </ProtectedRoutes>
-        }
-      >
+
+return (
+  <Routes>
+    <Route element={<ProtectedRoutes><Layout /></ProtectedRoutes>}>
+      <Route key={"login"} path={"/"} element={<ProtectLogin><Login /></ProtectLogin>} />
+
+      {routes.map(({ id, path, Element }) => (
         <Route
-          key={"login"}
-          path={"/"}
+          key={id}
+          path={path}
           element={
-            <ProtectLogin>
-              <Login></Login>
-            </ProtectLogin>
+            <ProtectedRoutes>
+              <Element />
+            </ProtectedRoutes>
           }
-        ></Route>
+        />
+      ))}
+    </Route>
 
-        {routes.map(({ id, path, Element }) => (
-          <Route
-            key={id}
-            path={path}
-            element={
-              <ProtectedRoutes>
-                <Element></Element>
-              </ProtectedRoutes>
-            }
-          ></Route>
-        ))}
-      </Route>
-
-      <Route path="*" element={<RouteNotFound></RouteNotFound>}></Route>
-    </Routes>
-  );
-};
+    <Route path="*" element={<RouteNotFound />} />
+  </Routes>
+);
 
 export default AppRouter;
+
