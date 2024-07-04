@@ -14,6 +14,7 @@ def upload_image_to_cloudinary(file, public_id: str):
     try:
         result = cloudinary_upload(file, resource_type="image", public_id=public_id, transformation=[{"width": 400, "height": 400}])
         url_image = result.get('secure_url')
+        
         if not url_image:
             raise Exception("Failed to obtain image URL from Cloudinary")
         return url_image

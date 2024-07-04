@@ -50,7 +50,7 @@
 
     {% for restaurante in restaurantes -%}
     <div id="restaurant-info">
-        <div class="restaurant-name">{{restaurante.description}}</div>
+        <div class="restaurant-name">{{restaurante.name}}</div>
         <img src="{{restaurante.img}}" alt="Imagen del restaurante">
         <div class="restaurant-description">{{restaurante.description}}</div>
         <div class="restaurant-address"><strong>Dirección:</strong> {{restaurante.address}}</div>

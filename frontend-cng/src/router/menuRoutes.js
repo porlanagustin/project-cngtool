@@ -7,6 +7,11 @@ import Login from "../components/pages/login/Login";
 
 export const routes = [
   {
+    id: "login",
+    path: "/",
+    Element: Login,
+  },
+  {
     id: "home",
     path: "/home",
     Element: Homepage,

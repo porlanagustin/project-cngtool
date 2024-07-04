@@ -20,7 +20,7 @@ def upload_supplier(name: str = Form(...), address: str = Form(...), web: str = 
     
     urlImage = upload_image_to_cloudinary(image.file, public_id=f'restaurant_{name}')
 
-    data = schemas.DataRestaurant(name=name, address=address, web=web, description=description, image=urlImage)
+    data = schemas.DataRestaurant(name=name, address=address, web=web, description=description, img=urlImage)
     new_restaurant = models.Restaurant(owner_id=current_user.dni, **data.model_dump())
 
     db.add(new_restaurant)

@@ -24,6 +24,7 @@ def createfirstpdf(data_list):
 
     # VARIABLE DE RESTAURANTES (PROVEEDORES)
     all_suppliers_info = []
+
     try:
         for data in data_list:
             name = data.name
@@ -31,14 +32,17 @@ def createfirstpdf(data_list):
             address = data.address
             web = data.web
             description = data.description
+
             restaurant_info = {
-                'nombre': name, 
+                'name': name, 
                 'img': img, 
-                'direccion': address, 
+                'address': address, 
                 'web': web, 
                 'description': description
             }
+
             all_suppliers_info.append(restaurant_info)
+            
     except AttributeError as e:
         raise AttributeError(f"Error al procesar la lista de proveedores: {e}")
 
@@ -62,6 +66,9 @@ def createfirstpdf(data_list):
         raise Exception(f"Error al generar el PDF: {e}")
 
     return output_pdf
+
+
+
 
 
 

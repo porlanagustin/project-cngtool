@@ -1,13 +1,10 @@
-import Login from "../../components/pages/login/Login";
-import { isLog } from "../../services/authServices";
-import { useNavigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
+import { isAuthenticated } from "../../services/authServices.js"; 
 
-const ProtectedRoutes = ({children}) => {
-    const isLogged = isLog();
+const ProtectedRoutes = () => {
+  const isLoggedIn = isAuthenticated();
 
-    return isLogged ? children : <Login></Login>
-
-
-}
+  return isLoggedIn ? <Outlet /> : <Navigate to="/login" />;
+};
 
 export default ProtectedRoutes;
