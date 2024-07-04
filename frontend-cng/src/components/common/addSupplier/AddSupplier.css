@@ -6,7 +6,14 @@
 .ContenedorGeneral {
   width: 100%;
   height: auto;
-  background-color: #121212;
+  background: radial-gradient(circle, #2c2c2c 10%, transparent 10%),
+    radial-gradient(circle, #2c2c2c 10%, transparent 10%),
+    radial-gradient(circle, #2c2c2c 10%, transparent 10%),
+    radial-gradient(circle, #2c2c2c 10%, transparent 10%);
+  background-color: #121212; /* Color de fondo */
+  background-size: 20px 20px; /* Tamaño de los puntos */
+  background-position: 0 0, 10px 10px, 20px 0, 0 20px;
+  background-repeat: repeat;
   padding-bottom: 50px;
 }
 

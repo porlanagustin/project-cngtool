@@ -6,13 +6,21 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+
 .contenedorGeneral {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #121212;
+  background: radial-gradient(circle, #2c2c2c 10%, transparent 10%),
+    radial-gradient(circle, #2c2c2c 10%, transparent 10%),
+    radial-gradient(circle, #2c2c2c 10%, transparent 10%),
+    radial-gradient(circle, #2c2c2c 10%, transparent 10%);
+  background-color: #121212; /* Color de fondo */
+  background-size: 20px 20px; /* Tamaño de los puntos */
+  background-position: 0 0, 10px 10px, 20px 0, 0 20px;
+  background-repeat: repeat;
   padding-top: 10px;
 }
 
@@ -27,9 +35,8 @@
 
 .card {
   margin: 10px;
-
-  width: 350px;
-  height: 650px;
+  width: 280px;
+  height: 520px;
   border-radius: 8px;
   overflow: hidden;
   background-color: #d7d6d6;
@@ -46,23 +53,24 @@
 
 .card-image {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
 }
 
 .card-content {
   padding: 16px;
   color: #000000;
-  height: 350px; /* Ajustado para hacer espacio para los detalles */
+  height: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
 }
 
 .card-title {
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 700;
   margin: 0 0 8px;
 }
@@ -82,7 +90,7 @@
 }
 
 .expand-button {
-  background-color: #04a243;
+  background-color: #255c99;
   color: #fff;
   border: none;
   padding: 10px 16px;
@@ -91,49 +99,48 @@
   font-size: 1em;
   font-weight: 500;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
 .expand-button:hover {
-  background-color: #17a34a;
+  background-color: #5796df;
 }
 
 .card-details {
   text-align: center;
   width: 100%;
-  margin-top: 10px;
-  max-height: 0; /* Asegúrate de que la altura inicial es 0 */
-  overflow-y: auto; /* Agrega un scroll vertical si el contenido es muy largo */
-  padding: 16px;
-  font-size: 16px;
-
+  margin-top: 5px;
+  max-height: 0;
+  overflow-y: auto;
+  padding: 5px;
+  font-size: 0.9em;
   color: white;
   background-color: #c1bdbd;
-  transition: opacity 0.3s ease, max-height 0.3s ease; /* Agrega transición para la altura máxima */
-  opacity: 0; /* Asegúrate de que esté oculto */
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  opacity: 0;
 }
 
-/* Estilos del scroll */
 .card-details::-webkit-scrollbar {
-  width: 8px; /* Ancho del scrollbar */
+  width: 8px;
 }
 
 .card-details::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color del track del scrollbar */
-  border-radius: 10px; /* Radio de bordes del track */
+  background: #f1f1f1;
+  border-radius: 10px;
 }
 
 .card-details::-webkit-scrollbar-thumb {
-  background: #011627; /* Color de la parte del scrollbar que se mueve */
-  border-radius: 10px; /* Radio de bordes del scrollbar */
+  background: #011627;
+  border-radius: 10px;
 }
 
 .card-details::-webkit-scrollbar-thumb:hover {
-  background: #577590; /* Color del scrollbar al pasar el ratón por encima */
+  background: #577590;
 }
 
 .card-details.expanded {
-  opacity: 1; /* Muestra el contenido */
-  max-height: 400px; /* Ajusta la altura máxima para cuando la carta está expandida */
+  opacity: 1;
+  max-height: 320px;
 }
 
 .card-description {
@@ -151,11 +158,51 @@
 }
 
 .card-checkbox {
-  margin-right: 8px;
+  display: none;
 }
 
 .card-checkbox-label {
   font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+}
+
+.card-checkbox-label::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid #1db954;
+  border-radius: 4px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-checkbox-label::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: solid #000000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-checkbox:checked + .card-checkbox-label::before {
+  background-color: #1db954;
+  border-color: #1db954;
+}
+
+.card-checkbox:checked + .card-checkbox-label::after {
+  opacity: 1;
 }
 
 .button-container {
@@ -187,7 +234,7 @@
   }
 
   .card-image {
-    height: 200px;
+    height: 180px;
   }
 
   .card-content {

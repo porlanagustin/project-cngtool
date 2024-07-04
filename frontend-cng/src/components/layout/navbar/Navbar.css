@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #457b9d;
+  background-color: #262626;
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@
 }
 
 .navbar-button {
-  background-color: #201e1f;
+  background-color: #255c99;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -35,7 +35,7 @@
 }
 
 .navbar-button:hover {
-  background-color: #cecfc7;
+  background-color: #7ea3cc;
   color: black;
 }
 
