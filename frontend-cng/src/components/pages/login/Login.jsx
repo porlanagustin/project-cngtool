@@ -12,7 +12,6 @@ const Login = () => {
   const loginRequest = async (dataDNI, dataPassword) => {
     try {
       const loggedIn = await login(dataDNI, dataPassword);
-
       if (loggedIn) {
         navigate("/home");
       }

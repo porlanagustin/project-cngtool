@@ -35,30 +35,29 @@ export const getUserRole = () => {
 };
 
 export const deleteToken = () => {
-  localStorage.removeItem('token');
+  localStorage.removeItem("token");
 };
 
-export const isLoggedIn = () => {
+export const isAuthenticated = () => {
   const token = getToken();
-
   if (token) {
     return true;
   }
   return false;
 };
 
-export const isLog = () => {
-  const token = getToken();
+// export const isLog = () => {
+//   const token = getToken();
 
-  if (token) {
-    try {
-      // const payLoad = jwtDecode(token);
-      // const isLogin = Date.now() < payLoad.exp;
-      return true;
-    } catch (error) {
-      console.error("Error decoding JWT:", error);
-      return false;
-    }
-  }
-  return false;
-};
+//   if (token) {
+//     try {
+//       // const payLoad = jwtDecode(token);
+//       // const isLogin = Date.now() < payLoad.exp;
+//       return true;
+//     } catch (error) {
+//       console.error("Error decoding JWT:", error);
+//       return false;
+//     }
+//   }
+//   return false;
+// };

@@ -10,7 +10,7 @@ class Restaurant(Base):
     __tablename__ = "restaurants"
 
     name = Column(String, primary_key=True, nullable=False)
-    image = Column(String, nullable=False)
+    img = Column(String, nullable=False)
     address = Column(String, nullable=False)
     web = Column(String, nullable=True)
     description = Column(String, nullable=False)

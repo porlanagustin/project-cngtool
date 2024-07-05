@@ -27,4 +27,4 @@ def create_pdf(id: int, db: Session = Depends(get_db)):
 def create_pdf_react(data_list: List[schemas.DataRestaurant]):
     pdf_path = pdfgenerator.createfirstpdf(data_list)
 
-    return FileResponse(pdf_path, filename="all_suppliers.pdf", headers={"Content-Disposition": "attachment; filename=all_suppliers.pdf"})
+    return FileResponse(pdf_path, filename="allRestaurants.pdf", headers={"Content-Disposition": "attachment; filename=allRestaurants.pdf"})
