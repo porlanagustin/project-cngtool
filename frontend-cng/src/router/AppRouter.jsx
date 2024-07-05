@@ -11,11 +11,11 @@ const AppRouter = () => {
       <Route path="/login" element={<Login />} />
 
       {/* <Route element={<ProtectedRoutes />}> */}
-        <Route element={<Layout />}>
-          {routes.map(({ id, path, Element }) => (
-            <Route key={id} path={path} element={<Element />} />
-          ))}
-        </Route>
+      <Route element={<Layout />}>
+        {routes.map(({ id, path, Element }) => (
+          <Route key={id} path={path} element={<Element />} />
+        ))}
+      </Route>
       {/* </Route> */}
 
       <Route path="*" element={<RouteNotFound />} />
