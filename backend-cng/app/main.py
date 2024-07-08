@@ -1,6 +1,6 @@
 from . import models
 from .database import engine
-from .routers import user, auth, manageSupplier, restaurantsToPdf
+from .routers import user, auth, manageRestaurants, restaurantsToPdf
 from fastapi import FastAPI
 from .config import settings
 from fastapi.middleware.cors import CORSMiddleware
@@ -14,7 +14,7 @@ app.include_router(user.router)
 app.include_router(auth.router)
 app.include_router(restaurantsToPdf.router)
 # app.include_router(vote.router)
-app.include_router(manageSupplier.router)
+app.include_router(manageRestaurants.router)
 
 origins = [
     "http://localhost:5173",
