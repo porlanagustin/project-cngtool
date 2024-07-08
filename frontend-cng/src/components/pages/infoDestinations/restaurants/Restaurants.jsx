@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../../../common/card/Card";
-import AddSupplier from "../../../common/addSupplier/AddSupplier";
+import AddRestaurant from '../../../common/AddRestaurant/AddRestaurant.jsx';
 import "./Restaurants.css";
 
 const data = [
@@ -77,7 +77,7 @@ const Restaurants = () => {
       <div className="contenedorCarta">
         <Card data={data} />
       </div>
-      <AddSupplier> </AddSupplier>
+      <AddRestaurant> </AddRestaurant>
     </div>
   );
 };

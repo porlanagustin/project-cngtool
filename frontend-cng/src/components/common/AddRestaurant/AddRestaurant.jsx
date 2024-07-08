@@ -1,10 +1,8 @@
 import { useState } from "react";
-import axios from "axios";
-import Swal from "sweetalert2";
-import "./AddSupplier.css";
+import "./AddRestaurant.css";
 import { uploadRestaurant } from "../../../services/restaurantService";
 
-const AddSupplier = () => {
+const AddRestaurant = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -16,19 +14,10 @@ const AddSupplier = () => {
     const data = new FormData(e.target);
 
     try {
-      const response = uploadRestaurant(data);
-
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Restaurante agregado exitosamente",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-
+      await uploadRestaurant(data);
       e.target.reset();
     } catch (error) {
-      console.log("Error en formulario para agregar restaurante", error);
+      setError(error.message);
     } finally {
       setLoading(false);
     }
@@ -106,4 +95,4 @@ const TextAreaField = ({ label, ...props }) => (
   </label>
 );
 
-export default AddSupplier;
+export default AddRestaurant;
