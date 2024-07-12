@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* Asegura que el botón de menú esté posicionado correctamente */
 }
 
 .navbar-container {
@@ -19,6 +20,66 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+/* Estilo del botón de menú móvil */
+.navbar-menu-toggle {
+  display: none; /* Oculta el botón por defecto */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Mostrar el botón de menú en pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ajusta según el tamaño del logo */
+    left: 0;
+    width: 100%;
+    background-color: #262626;
+    padding: 10px 0;
+    gap: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    display: none; /* Oculta el menú por defecto */
+  }
+
+  .navbar-links.open {
+    display: flex; /* Muestra el menú cuando está abierto */
+  }
+
+  .navbar-item {
+    margin: 10px 0;
+  }
+
+  .navbar-menu {
+    display: flex;
+    flex-direction: column;
+    position: static; /* Asegura que los menús estén en el flujo del documento */
+    background-color: #262626;
+    box-shadow: none;
+    border-radius: 0;
+    z-index: 10;
+  }
+
+  .navbar-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #1976d2;
+  }
+
+  .navbar-menu a:hover {
+    background-color: #f0f0f0;
+  }
 }
 
 .navbar-item {
@@ -67,18 +128,17 @@
   align-items: center;
   gap: 50px;
 }
-
-.navbar-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .navbar-logo-link {
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
   display: flex;
+  transition: transform 0.3s ease, color 0.3s ease; /* Agrega transición para el hover */
+}
+
+.navbar-logo-link:hover {
+  transform: scale(1.1); /* Aumenta el tamaño del texto */
+  color: #0c6fe0; /* Cambia el color del texto al pasar el mouse */
 }
 
 .navbar-logo-img {
