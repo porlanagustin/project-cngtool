@@ -5,6 +5,7 @@ import Restaurants from "../components/pages/infoDestinations/restaurants/Restau
 import CalendarEvents from "../components/pages/calendarEvents/CalendarEvents";
 import Login from "../components/pages/login/Login";
 import PlaceToVisit from "../components/pages/infoDestinations/placeToVisit/PlaceToVisit";
+import Theater from "../components/pages/infoDestinations/theater/Theater";
 
 export const routes = [
   {
@@ -41,5 +42,10 @@ export const routes = [
     id: "PlaceToVisit",
     path: "/PlaceToVisit",
     Element: PlaceToVisit,
+  },
+  {
+    id: "theater",
+    path: "/theater",
+    Element: Theater,
   },
 ];
