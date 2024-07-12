@@ -1,4 +1,4 @@
-import axiosInstance from "../axios/axiosInstance.js";
+import { axiosInstance, instanceRestaurants } from "../axios/axiosInstance.js";
 import Swal from "sweetalert2";
 import { getToken } from "../services/authServices.js";
 
@@ -6,16 +6,12 @@ export const uploadRestaurant = async (data) => {
   const token = getToken();
 
   try {
-    const response = await axiosInstance.post(
-      "manageRestaurants/uploadRestaurant",
-      data,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await instanceRestaurants.post("/uploadRestaurant", data, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     Swal.fire({
       position: "center",
@@ -48,3 +44,12 @@ export const uploadRestaurant = async (data) => {
     }
   }
 };
+
+export const getRestaurants = async () => {
+  try {
+    const response = await instanceRestaurants.get("/getRestaurants");
+    return response.data;
+  } catch (error) {
+    throw new Error ("Error al intentar obtener los restaurantes", error)
+  }
+}

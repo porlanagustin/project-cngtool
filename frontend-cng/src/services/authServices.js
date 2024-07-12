@@ -1,5 +1,5 @@
 import { jwtDecode } from "jwt-decode";
-import axiosInstance from "../axios/axiosInstance.js";
+import { axiosInstance } from "../axios/axiosInstance.js";
 
 
 export const getToken = () => {

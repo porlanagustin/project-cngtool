@@ -1,10 +1,16 @@
 import axios from "axios";
 
-const axiosInstance = axios.create({
+export const axiosInstance = axios.create({
     baseURL: 'http://127.0.0.1:8000/',
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
     },
 });
 
-export default axiosInstance;
+
+export const instanceRestaurants = axios.create({
+    baseURL: 'http://127.0.0.1:8000/manageRestaurants',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    },
+});
