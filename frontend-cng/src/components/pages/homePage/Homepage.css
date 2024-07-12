@@ -2,8 +2,8 @@
   width: 100%;
   height: 100vh;
   font-family: Arial, sans-serif;
-  color: #fff; /* Texto blanco para contraste con fondo negro */
-  background-color: #121212; /* Fondo negro */
+  color: #fff;
+  background-color: #121212;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,6 @@
   align-items: center;
 }
 
-/* Bienvenida y Resumen */
 .welcome {
   text-align: center;
   margin-bottom: 30px;
@@ -19,17 +18,17 @@
 
 .welcome h1 {
   font-size: 24px;
-  color: #007bff; /* Color corporativo */
+  color: #007bff;
 }
 
 .welcome p {
   font-size: 46px;
-  color: #ccc; /* Color de texto gris claro */
+  color: #ccc;
 }
 
 .welcome span {
   font-size: 36px;
-  color: #000000; /* Color de texto gris claro */
+  color: #000000;
   background-color: rgba(255, 255, 255, 0.418);
   padding: 5px;
   border-radius: 10px;
@@ -41,35 +40,35 @@
 
 .search-section h2 {
   font-size: 20px;
-  color: #fff; /* Color blanco para el título de búsqueda */
+  color: #fff;
   margin-bottom: 15px;
 }
 
 .search-container {
   display: flex;
-  justify-content: center; /* Centra horizontalmente el contenido */
-  align-items: center; /* Alinea verticalmente el contenido */
-  gap: 10px; /* Espacio entre el campo de búsqueda y el botón */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .search-input {
   padding: 10px;
-  border: 1px solid #444; /* Borde sutil */
+  border: 1px solid #444;
   border-radius: 5px;
-  background-color: #222; /* Fondo oscuro del input */
-  color: #fff; /* Texto blanco */
+  background-color: #222;
+  color: #fff;
   font-size: 16px;
-  width: 300px; /* Ancho del campo de búsqueda */
-  margin: 0; /* Elimina el margen */
+  width: 300px;
+  margin: 0;
 }
 
 .search-input::placeholder {
-  color: #777; /* Color del placeholder */
+  color: #777;
 }
 
 .search-button {
-  background-color: #007bff; /* Color corporativo */
-  color: #fff; /* Texto blanco */
+  background-color: #007bff;
+  color: #fff;
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -78,10 +77,9 @@
 }
 
 .search-button:hover {
-  background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+  background-color: #0056b3;
 }
 
-/* Información de Contacto */
 .contact-info {
   text-align: center;
 }
@@ -97,7 +95,7 @@
 }
 
 .contact-info a {
-  color: #007bff; /* Color corporativo */
+  color: #007bff;
   text-decoration: none;
 }
 

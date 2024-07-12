@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; /* Asegura que el botón de menú esté posicionado correctamente */
+  position: relative; 
 }
 
 .navbar-container {
@@ -22,9 +22,8 @@
   gap: 20px;
 }
 
-/* Estilo del botón de menú móvil */
 .navbar-menu-toggle {
-  display: none; /* Oculta el botón por defecto */
+  display: none; 
   background: none;
   border: none;
   color: white;
@@ -32,7 +31,6 @@
   cursor: pointer;
 }
 
-/* Mostrar el botón de menú en pantallas pequeñas */
 @media (max-width: 768px) {
   .navbar-menu-toggle {
     display: block;
@@ -42,7 +40,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Ajusta según el tamaño del logo */
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: #262626;
@@ -50,11 +48,11 @@
     gap: 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 10;
-    display: none; /* Oculta el menú por defecto */
+    display: none; 
   }
 
   .navbar-links.open {
-    display: flex; /* Muestra el menú cuando está abierto */
+    display: flex; 
   }
 
   .navbar-item {
@@ -64,7 +62,7 @@
   .navbar-menu {
     display: flex;
     flex-direction: column;
-    position: static; /* Asegura que los menús estén en el flujo del documento */
+    position: static; 
     background-color: #262626;
     box-shadow: none;
     border-radius: 0;
@@ -133,12 +131,12 @@
   text-decoration: none;
   font-size: 1.5rem;
   display: flex;
-  transition: transform 0.3s ease, color 0.3s ease; /* Agrega transición para el hover */
+  transition: transform 0.3s ease, color 0.3s ease; 
 }
 
 .navbar-logo-link:hover {
-  transform: scale(1.1); /* Aumenta el tamaño del texto */
-  color: #0c6fe0; /* Cambia el color del texto al pasar el mouse */
+  transform: scale(1.1); 
+  color: #0c6fe0; /
 }
 
 .navbar-logo-img {
