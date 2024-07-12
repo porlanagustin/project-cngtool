@@ -8,8 +8,7 @@ import Login from "../components/pages/login/Login.jsx";
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-
+      <Route path="/" element={<Login />} />
       {/* <Route element={<ProtectedRoutes />}> */}
       <Route element={<Layout />}>
         {routes.map(({ id, path, Element }) => (

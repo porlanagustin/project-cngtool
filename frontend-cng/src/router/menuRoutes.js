@@ -9,11 +9,6 @@ import Theater from "../components/pages/infoDestinations/theater/Theater";
 
 export const routes = [
   {
-    id: "login",
-    path: "/",
-    Element: Login,
-  },
-  {
     id: "home",
     path: "/home",
     Element: Homepage,
@@ -47,5 +42,10 @@ export const routes = [
     id: "theater",
     path: "/theater",
     Element: Theater,
+  },
+  {
+    id: "login",
+    path: "/login",
+    Element: Login,
   },
 ];

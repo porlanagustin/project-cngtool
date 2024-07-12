@@ -106,7 +106,7 @@ const Navbar = () => {
         </div>
         <div className="contenedorTituloAuth">
           <div className="navbar-logo">
-            <Link to="" className="navbar-logo-link">
+            <Link to="/home" className="navbar-logo-link">
               Concierge Tool
             </Link>
           </div>
