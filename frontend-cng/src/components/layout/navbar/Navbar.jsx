@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { deleteToken} from "../../../services/authServices.js";
+import { deleteToken } from "../../../services/authServices.js";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [proveedoresOpen, setProveedoresOpen] = useState(false);
   const [destinosOpen, setDestinosOpen] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleMenuClick = (setter) => {
+  const handleMenuClick = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  const handleDropdownClick = (setter, event) => {
+    event.stopPropagation();
     setter((prev) => !prev);
   };
 
@@ -25,11 +31,33 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-links">
+        {/* Logo and Auth Section */}
+        <div className="contenedorTituloAuth">
+          <div className="navbar-logo">
+            <Link to="/home" className="navbar-logo-link">
+              Concierge Tool
+            </Link>
+          </div>
+          <div className="navbar-auth">
+            <button onClick={handleLogout} className="navbar-auth-link">
+              Logout
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button className="navbar-menu-toggle" onClick={handleMenuClick}>
+          ☰
+        </button>
+
+        {/* Links Section */}
+        <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
           <div className="navbar-item">
             <button
               className="navbar-button"
-              onClick={() => handleMenuClick(setProveedoresOpen)}
+              onClick={(event) =>
+                handleDropdownClick(setProveedoresOpen, event)
+              }
             >
               Proveedores
             </button>
@@ -63,7 +91,7 @@ const Navbar = () => {
           <div className="navbar-item">
             <button
               className="navbar-button"
-              onClick={() => handleMenuClick(setDestinosOpen)}
+              onClick={(event) => handleDropdownClick(setDestinosOpen, event)}
             >
               Informacion de Destinos
             </button>
@@ -88,7 +116,7 @@ const Navbar = () => {
           <div className="navbar-item">
             <button
               className="navbar-button"
-              onClick={() => handleMenuClick(setCalendarOpen)}
+              onClick={(event) => handleDropdownClick(setCalendarOpen, event)}
             >
               Calendario de Eventos
             </button>
@@ -102,18 +130,6 @@ const Navbar = () => {
                 </Link>
               </div>
             )}
-          </div>
-        </div>
-        <div className="contenedorTituloAuth">
-          <div className="navbar-logo">
-            <Link to="/home" className="navbar-logo-link">
-              Concierge Tool
-            </Link>
-          </div>
-          <div className="navbar-auth">
-            <button onClick={handleLogout} className="navbar-auth-link">
-              Logout
-            </button>
           </div>
         </div>
       </div>
