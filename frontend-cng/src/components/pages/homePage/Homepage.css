@@ -26,12 +26,59 @@
   font-size: 46px;
   color: #ccc; /* Color de texto gris claro */
 }
+
 .welcome span {
   font-size: 36px;
   color: #000000; /* Color de texto gris claro */
   background-color: rgba(255, 255, 255, 0.418);
   padding: 5px;
   border-radius: 10px;
+}
+.search-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.search-section h2 {
+  font-size: 20px;
+  color: #fff; /* Color blanco para el título de búsqueda */
+  margin-bottom: 15px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Alinea verticalmente el contenido */
+  gap: 10px; /* Espacio entre el campo de búsqueda y el botón */
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #444; /* Borde sutil */
+  border-radius: 5px;
+  background-color: #222; /* Fondo oscuro del input */
+  color: #fff; /* Texto blanco */
+  font-size: 16px;
+  width: 300px; /* Ancho del campo de búsqueda */
+  margin: 0; /* Elimina el margen */
+}
+
+.search-input::placeholder {
+  color: #777; /* Color del placeholder */
+}
+
+.search-button {
+  background-color: #007bff; /* Color corporativo */
+  color: #fff; /* Texto blanco */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el ratón */
 }
 
 /* Información de Contacto */

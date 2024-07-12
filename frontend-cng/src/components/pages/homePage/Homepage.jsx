@@ -12,6 +12,15 @@ const Homepage = () => {
         </p>
       </section>
 
+      {/* Sección de Búsqueda */}
+      <section className="search-section">
+        <h2>Que estabas buscando?</h2>
+        <div className="search-container">
+          <input type="text" placeholder="Buscar..." className="search-input" />
+          <button className="search-button">Buscar</button>
+        </div>
+      </section>
+
       {/* Información de Contacto */}
       <section className="contact-info">
         <h2>¿Necesitas Ayuda?</h2>
