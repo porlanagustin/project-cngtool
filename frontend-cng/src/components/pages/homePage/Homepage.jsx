@@ -1,3 +1,5 @@
+import "./Homepage.css";
+
 const Homepage = () => {
   return (
     <div className="homepage">
@@ -5,8 +7,8 @@ const Homepage = () => {
       <section className="welcome">
         <h1>Bienvenido al Concierge Tool</h1>
         <p>
-          Una herramienta para ayudarte a explorar lugares para visitar, teatros
-          y restaurantes.
+          Empoderando a nuestro equipo <br />{" "}
+          <span>con herramientas efectivas.</span>
         </p>
       </section>
 
