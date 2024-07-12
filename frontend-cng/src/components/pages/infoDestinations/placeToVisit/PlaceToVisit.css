@@ -1,0 +1,9 @@
+.contenedorCarta {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.contenedorAñadir {
+  margin-top: 50px;
+}

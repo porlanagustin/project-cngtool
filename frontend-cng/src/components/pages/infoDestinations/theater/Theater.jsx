@@ -1,18 +1,18 @@
 import React from "react";
-import "./PlaceToVisit.css";
+import "./Theater.css";
 import Card from "../../../common/card/Card";
 import AddRestaurant from "../../../common/AddRestaurant/AddRestaurant";
 
-const PlaceToVisit = () => {
+const Theater = () => {
   return (
     <div>
       <div className="contenedorCarta"></div>
       <div className="contenedorAñadir">
         {" "}
         <AddRestaurant> </AddRestaurant>
-      </div>{" "}
+      </div>
     </div>
   );
 };
 
-export default PlaceToVisit;
+export default Theater;

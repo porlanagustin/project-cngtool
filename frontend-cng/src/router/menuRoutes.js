@@ -3,6 +3,9 @@ import Transfers from "../components/pages/suppliers/gifts/Gifts";
 import Gifts from "../components/pages/suppliers/gifts/Gifts";
 import Restaurants from "../components/pages/infoDestinations/restaurants/Restaurants";
 import CalendarEvents from "../components/pages/calendarEvents/CalendarEvents";
+import Login from "../components/pages/login/Login";
+import PlaceToVisit from "../components/pages/infoDestinations/placeToVisit/PlaceToVisit";
+import Theater from "../components/pages/infoDestinations/theater/Theater";
 
 export const routes = [
   {
@@ -29,5 +32,20 @@ export const routes = [
     id: "calendarEvents",
     path: "/CalendarEvents",
     Element: CalendarEvents,
+  },
+  {
+    id: "PlaceToVisit",
+    path: "/PlaceToVisit",
+    Element: PlaceToVisit,
+  },
+  {
+    id: "theater",
+    path: "/theater",
+    Element: Theater,
+  },
+  {
+    id: "login",
+    path: "/login",
+    Element: Login,
   },
 ];
