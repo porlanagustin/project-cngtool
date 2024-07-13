@@ -4,23 +4,16 @@ import { deleteToken } from "../../../services/authServices.js";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [proveedoresOpen, setProveedoresOpen] = useState(false);
-  const [destinosOpen, setDestinosOpen] = useState(false);
-  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const navigate = useNavigate();
 
-  const handleMenuClick = () => {
-    setMenuOpen((prev) => !prev);
-  };
-
-  const handleDropdownClick = (setter, event) => {
+  const handleDropdownClick = (dropdownName, event) => {
     event.stopPropagation();
-    setter((prev) => !prev);
+    setOpenDropdown((prev) => (prev === dropdownName ? null : dropdownName));
   };
 
-  const handleMenuClose = (setter) => {
-    setter(false);
+  const handleMenuClose = () => {
+    setOpenDropdown(null);
   };
 
   const handleLogout = () => {
@@ -46,42 +39,39 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="navbar-menu-toggle" onClick={handleMenuClick}>
+        <button
+          className="navbar-menu-toggle"
+          onClick={() => handleDropdownClick("menu", event)}
+        >
           ☰
         </button>
 
         {/* Links Section */}
-        <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
+        <div
+          className={`navbar-links ${openDropdown === "menu" ? "open" : ""}`}
+        >
           <div className="navbar-item">
             <button
               className="navbar-button"
-              onClick={(event) =>
-                handleDropdownClick(setProveedoresOpen, event)
-              }
+              onClick={(event) => handleDropdownClick("proveedores", event)}
             >
               Proveedores
             </button>
-            {proveedoresOpen && (
+            {openDropdown === "proveedores" && (
               <div className="navbar-menu">
-                <Link
-                  to="/transfers"
-                  onClick={() => handleMenuClose(setProveedoresOpen)}
-                >
+                <Link to="/transfers" onClick={handleMenuClose}>
                   Traslados
                 </Link>
-                <Link
-                  to="/gifts"
-                  onClick={() => handleMenuClose(setProveedoresOpen)}
-                >
+                <Link to="/gifts" onClick={handleMenuClose}>
                   Regalos
                 </Link>
-                <Link to="" onClick={() => handleMenuClose(setProveedoresOpen)}>
+                <Link to="" onClick={handleMenuClose}>
                   Tickets
                 </Link>
-                <Link to="" onClick={() => handleMenuClose(setProveedoresOpen)}>
+                <Link to="" onClick={handleMenuClose}>
                   Excursiones
                 </Link>
-                <Link to="" onClick={() => handleMenuClose(setProveedoresOpen)}>
+                <Link to="" onClick={handleMenuClose}>
                   Golf
                 </Link>
               </div>
@@ -91,22 +81,19 @@ const Navbar = () => {
           <div className="navbar-item">
             <button
               className="navbar-button"
-              onClick={(event) => handleDropdownClick(setDestinosOpen, event)}
+              onClick={(event) => handleDropdownClick("destinos", event)}
             >
               Informacion de Destinos
             </button>
-            {destinosOpen && (
+            {openDropdown === "destinos" && (
               <div className="navbar-menu">
-                <Link
-                  to="/restaurants"
-                  onClick={() => handleMenuClose(setDestinosOpen)}
-                >
+                <Link to="/restaurants" onClick={handleMenuClose}>
                   Restaurantes
                 </Link>
-                <Link to="" onClick={() => handleMenuClose(setDestinosOpen)}>
+                <Link to="" onClick={handleMenuClose}>
                   Lugares a visitar
                 </Link>
-                <Link to="" onClick={() => handleMenuClose(setDestinosOpen)}>
+                <Link to="" onClick={handleMenuClose}>
                   Teatros
                 </Link>
               </div>
@@ -116,16 +103,13 @@ const Navbar = () => {
           <div className="navbar-item">
             <button
               className="navbar-button"
-              onClick={(event) => handleDropdownClick(setCalendarOpen, event)}
+              onClick={(event) => handleDropdownClick("calendar", event)}
             >
               Calendario de Eventos
             </button>
-            {calendarOpen && (
+            {openDropdown === "calendar" && (
               <div className="navbar-menu">
-                <Link
-                  to="/CalendarEvents"
-                  onClick={() => handleMenuClose(setCalendarOpen)}
-                >
+                <Link to="/CalendarEvents" onClick={handleMenuClose}>
                   Calendario de eventos
                 </Link>
               </div>
