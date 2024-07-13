@@ -5,11 +5,8 @@ const Homepage = () => {
     <div className="homepage">
       {/* Bienvenida y Resumen */}
       <section className="welcome">
-        <h1>Bienvenido Concierge Tool</h1>
-        <p>
-          Empoderando a nuestro equipo <br />{" "}
-          <span>con herramientas efectivas.</span>
-        </p>
+        <h1>ConciergeTool</h1>
+        <p>Empoderando a nuestro equipo con herramientas efectivas.</p>
       </section>
 
       {/* Sección de Búsqueda */}

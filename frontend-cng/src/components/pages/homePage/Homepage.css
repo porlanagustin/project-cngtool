@@ -3,7 +3,11 @@
   height: 100vh;
   font-family: Arial, sans-serif;
   color: #fff;
-  background-color: #121212;
+  background: linear-gradient(
+    135deg,
+    #046e97,
+    #c0baba
+  ); /* Gradiente de cielo a niebla */
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -21,13 +25,14 @@
 }
 
 .welcome h1 {
-  font-size: 24px;
-  color: #007bff;
-  animation: colorPulse 2s infinite; /* Pulso de color */
+  font-size: 10vmin; /* Ajusta el tamaño de la fuente según la dimensión más pequeña del viewport */
+  color: #ffffff;
+
+  animation: colorPulse 5s infinite; /* Pulso de color */
 }
 
 .welcome p {
-  font-size: 46px;
+  font-size: 7vmin; /* Ajusta el tamaño de la fuente según la dimensión más pequeña del viewport */
   color: #ccc;
   animation: fadeIn 1.5s ease-out 0.5s forwards; /* Animación de entrada con retardo */
 }
@@ -35,7 +40,7 @@
 .welcome span {
   font-size: 36px;
   color: #000000;
-  background-color: rgba(255, 255, 255, 0.418);
+  background-color: rgba(0, 0, 0, 0.199);
   padding: 5px;
   border-radius: 10px;
   transform: scale(1); /* Escala inicial */
@@ -167,13 +172,13 @@
 
 @keyframes colorPulse {
   0% {
-    color: #007bff;
+    color: #ffffff;
   }
   50% {
-    color: #0056b3;
+    color: #c5c6c7;
   }
   100% {
-    color: #007bff;
+    color: #ffffff;
   }
 }
 
