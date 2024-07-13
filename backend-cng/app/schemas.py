@@ -38,6 +38,12 @@ class Post(DataRestaurant):
     created_at: datetime
     owner_id: int
     owner: UserOut
+
+class RestaurantSchema(DataRestaurant):
+    owner_id: int
+
+    class Config:
+        orm_mode = True
     
 
 #     class Config:

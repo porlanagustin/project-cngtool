@@ -1,11 +1,11 @@
-import cloudinary.uploader
-import cloudinary.uploader
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form, status
 from starlette.responses import JSONResponse
 from sqlalchemy.orm import Session 
 from ..database import get_db
 from .. import schemas, models, oauth2
 from ..cloudinary.cloudinaryConfig import upload_image_to_cloudinary
+from .. import schemas
+from typing import List
 
 router = APIRouter(
     prefix="/manageRestaurants",
@@ -34,3 +34,7 @@ def upload_supplier(name: str = Form(...), address: str = Form(...), web: str = 
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Authentication error. Please log in again.")
 
     
+@router.get('/getRestaurants', response_model=List[schemas.RestaurantSchema], status_code=status.HTTP_200_OK)
+def get_restaurants(db: Session = Depends(get_db)): 
+    restaurants = db.query(models.Restaurant).all()
+    return restaurants
