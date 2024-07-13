@@ -3,43 +3,43 @@
   height: 100vh;
   font-family: Arial, sans-serif;
   color: #fff;
-  background-color: #121212;
+  background: linear-gradient(135deg, #046e97, #c0baba);
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Para evitar el scroll durante las animaciones */
+  overflow: hidden;
 }
 
 .welcome {
   text-align: center;
   margin-bottom: 30px;
-  opacity: 0; /* Inicialmente invisible */
-  transform: translateY(20px); /* Inicialmente desplazado hacia abajo */
-  animation: fadeInUp 1s ease-out forwards; /* Animación de entrada */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 .welcome h1 {
-  font-size: 24px;
-  color: #007bff;
-  animation: colorPulse 2s infinite; /* Pulso de color */
+  font-size: 15vmin;
+  color: #ffffff;
+  animation: colorPulse 5s infinite;
 }
 
 .welcome p {
-  font-size: 46px;
+  font-size: 4vmin;
   color: #ccc;
-  animation: fadeIn 1.5s ease-out 0.5s forwards; /* Animación de entrada con retardo */
+  animation: fadeIn 1.5s ease-out 0.5s forwards;
 }
 
 .welcome span {
   font-size: 36px;
   color: #000000;
-  background-color: rgba(255, 255, 255, 0.418);
+  background-color: rgba(0, 0, 0, 0.199);
   padding: 5px;
   border-radius: 10px;
-  transform: scale(1); /* Escala inicial */
-  animation: pulse 1.5s infinite; /* Pulso */
+  transform: scale(1);
+  animation: pulse 1.5s infinite;
 }
 
 .search-section {
@@ -47,14 +47,14 @@
   margin-bottom: 30px;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 1s ease-out 1s forwards; /* Animación de entrada con retardo */
+  animation: fadeInUp 1s ease-out 1s forwards;
 }
 
 .search-section h2 {
   font-size: 20px;
   color: #fff;
   margin-bottom: 15px;
-  animation: slideInFromLeft 1s ease-out forwards; /* Animación de entrada desde la izquierda */
+  animation: slideInFromLeft 1s ease-out forwards;
 }
 
 .search-container {
@@ -73,7 +73,7 @@
   font-size: 16px;
   width: 300px;
   margin: 0;
-  transition: background-color 0.3s ease; /* Transición suave */
+  transition: background-color 0.3s ease;
 }
 
 .search-input::placeholder {
@@ -81,7 +81,7 @@
 }
 
 .search-input:focus {
-  background-color: #333; /* Cambio de color al enfocar */
+  background-color: #333;
 }
 
 .search-button {
@@ -92,19 +92,19 @@
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Transición suave */
+  transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
   background-color: #0056b3;
-  transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+  transform: scale(1.05);
 }
 
 .contact-info {
   text-align: center;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 1s ease-out 1.5s forwards; /* Animación de entrada con retardo */
+  animation: fadeInUp 1s ease-out 1.5s forwards;
 }
 
 .contact-info h2 {
@@ -120,15 +120,13 @@
 .contact-info a {
   color: #007bff;
   text-decoration: none;
-  transition: color 0.3s ease; /* Transición suave */
+  transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-  color: #0056b3; /* Cambio de color al pasar el ratón */
+  color: #0056b3;
   text-decoration: underline;
 }
-
-/* Animaciones */
 
 @keyframes fadeIn {
   from {
@@ -167,13 +165,13 @@
 
 @keyframes colorPulse {
   0% {
-    color: #007bff;
+    color: #ffffff;
   }
   50% {
-    color: #0056b3;
+    color: #c5c6c7;
   }
   100% {
-    color: #007bff;
+    color: #ffffff;
   }
 }
 
