@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Menu, MenuItem} from "@mui/material";
-import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
+import { Menu, MenuItem } from "@mui/material";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import "./Table.css";
 
 const columns = [
@@ -12,7 +12,7 @@ const columns = [
   "Alcance",
   "Recomendacion",
   "Usuario",
-  "Password"
+  "Password",
 ];
 
 const categories = ["Todos", "Argentina", "EEUU", "Global", "Buenos Aires"];
@@ -31,16 +31,17 @@ const Table = ({ data }) => {
   };
 
   const handleCheckboxChange = (rowIndex) => {
-    const newSelectedRows = [...selectedRows];
-    if (newSelectedRows.includes(rowIndex)) {
-      newSelectedRows.splice(newSelectedRows.indexOf(rowIndex), 1);
-    } else {
-      newSelectedRows.push(rowIndex);
-    }
-    setSelectedRows(newSelectedRows);
+    setSelectedRows((prevSelectedRows) =>
+      prevSelectedRows.includes(rowIndex)
+        ? prevSelectedRows.filter((index) => index !== rowIndex)
+        : [...prevSelectedRows, rowIndex]
+    );
   };
 
-  let dataFilter = selectedCategory === "Todos" ? data : data.filter(item => item.alcance === selectedCategory);
+  const dataFilter =
+    selectedCategory === "Todos"
+      ? data
+      : data.filter((item) => item.alcance === selectedCategory);
 
   return (
     <div className="table-container">
@@ -51,7 +52,7 @@ const Table = ({ data }) => {
           variant="contained"
           color="primary"
         >
-          {selectedCategory ? selectedCategory : "Seleccionar"}
+          {selectedCategory}
           <span className="dropdown-arrow"></span>
         </button>
         <Menu
@@ -71,11 +72,10 @@ const Table = ({ data }) => {
               {category}
             </MenuItem>
           ))}
-          
         </Menu>
       </div>
 
-      {/*//////////////TABLA///////////////*/}
+      {/* Tablas */}
       <table className="custom-table">
         <thead>
           <tr>
@@ -85,27 +85,26 @@ const Table = ({ data }) => {
             <th>Votar</th>
           </tr>
         </thead>
-        {/*/////////////////////////////*/}
         <tbody>
-
           {dataFilter.map((row, rowIndex) => (
             <tr key={rowIndex}>
               <td>
-                <input type="checkbox" checked={selectedRows.includes(rowIndex)} onChange={() => handleCheckboxChange(rowIndex)}/>
+                <input
+                  type="checkbox"
+                  checked={selectedRows.includes(rowIndex)}
+                  onChange={() => handleCheckboxChange(rowIndex)}
+                />
               </td>
-    
               {columns.slice(1).map((column, colIndex) => (
                 <td key={colIndex}>{row[column.toLowerCase()]}</td>
               ))}
-              <td ><ThumbUpAltIcon className="voteIcon"></ThumbUpAltIcon></td>
+              <td>
+                <ThumbUpAltIcon className="voteIcon" />
+              </td>
             </tr>
           ))}
         </tbody>
-        {/*/////////////////////////////*/}
-
       </table>
-      {/*//////////////TABLA///////////////*/}
-
     </div>
   );
 };
