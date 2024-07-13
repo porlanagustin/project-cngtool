@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Card from "../../../common/card/Card";
-import AddRestaurant from '../../../common/AddRestaurant/AddRestaurant.jsx';
+import AddRestaurant from "../../../common/AddRestaurant/AddRestaurant.jsx";
 import "./Restaurants.css";
 import dataRestaurant from "./dataRestaurant.json";
 
 const Restaurants = () => {
-
   const data = dataRestaurant;
 
   return (
@@ -19,4 +18,3 @@ const Restaurants = () => {
 };
 
 export default Restaurants;
-
