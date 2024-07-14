@@ -8,6 +8,7 @@ const Navbar = () => {
   const [proveedoresOpen, setProveedoresOpen] = useState(false);
   const [destinosOpen, setDestinosOpen] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleMenuClick = () => {
@@ -38,11 +39,8 @@ const Navbar = () => {
               Concierge Tool
             </Link>
           </div>
-          <div className="navbar-auth">
-            <button onClick={handleLogout} className="navbar-auth-link">
-              Logout
-            </button>
-          </div>
+          {/* Removed the logout button from here */}
+          {/* Perfil Menu */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -128,6 +126,25 @@ const Navbar = () => {
                 >
                   Calendario de eventos
                 </Link>
+              </div>
+            )}
+          </div>
+          <div className="navbar-profile">
+            <img
+              src="/gente.png"
+              alt="Profile"
+              className="navbar-profile-img"
+              onClick={() => setProfileMenuOpen((prev) => !prev)}
+            />
+            {profileMenuOpen && (
+              <div className="navbar-profile-menu">
+                <Link
+                  to="/profile"
+                  onClick={() => handleMenuClose(setProfileMenuOpen)}
+                >
+                  Ver Perfil
+                </Link>
+                <button onClick={handleLogout}>Cerrar Sesión</button>
               </div>
             )}
           </div>
