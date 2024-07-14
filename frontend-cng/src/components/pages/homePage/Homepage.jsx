@@ -2,7 +2,6 @@
 import React from "react";
 import "./Homepage.css";
 import SuggestionCard from "../../common/SuggestionCard/SuggestionCard";
-
 const Homepage = () => {
   return (
     <div className="homepage">
@@ -26,17 +25,32 @@ const Homepage = () => {
         <SuggestionCard
           title="Lugares para Visitar"
           description="Descubre los mejores lugares para visitar en tu área."
-          link="#"
+          link="/PlaceToVisit"
         />
         <SuggestionCard
           title="Restaurantes Recomendados"
           description="Encuentra los mejores restaurantes según tus preferencias."
+          link="/restaurants"
+        />
+        <SuggestionCard
+          title="Teatros"
+          description="Encuentra los mejores teatros según tus preferencias."
           link="#"
         />
         <SuggestionCard
           title="Eventos Cercanos"
           description="Mantente al día con los eventos que suceden cerca de ti."
-          link="#"
+          link="/CalendarEvents"
+        />
+        <SuggestionCard
+          title="Eventos Cercanos"
+          description="Mantente al día con los eventos que suceden cerca de ti."
+          link="/CalendarEvents"
+        />
+        <SuggestionCard
+          title="Eventos Cercanos"
+          description="Mantente al día con los eventos que suceden cerca de ti."
+          link="/CalendarEvents"
         />
       </section>
 
