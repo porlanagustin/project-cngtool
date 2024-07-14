@@ -1,4 +1,7 @@
+// Homepage.jsx
+import React from "react";
 import "./Homepage.css";
+import SuggestionCard from "../../common/SuggestionCard/SuggestionCard";
 
 const Homepage = () => {
   return (
@@ -11,11 +14,30 @@ const Homepage = () => {
 
       {/* Sección de Búsqueda */}
       <section className="search-section">
-        <h2>Que estabas buscando?</h2>
+        <h2>¿Qué estabas buscando?</h2>
         <div className="search-container">
           <input type="text" placeholder="Buscar..." className="search-input" />
           <button className="search-button">Buscar</button>
         </div>
+      </section>
+
+      {/* Sugerencias */}
+      <section className="sugerencias">
+        <SuggestionCard
+          title="Lugares para Visitar"
+          description="Descubre los mejores lugares para visitar en tu área."
+          link="#"
+        />
+        <SuggestionCard
+          title="Restaurantes Recomendados"
+          description="Encuentra los mejores restaurantes según tus preferencias."
+          link="#"
+        />
+        <SuggestionCard
+          title="Eventos Cercanos"
+          description="Mantente al día con los eventos que suceden cerca de ti."
+          link="#"
+        />
       </section>
 
       {/* Información de Contacto */}

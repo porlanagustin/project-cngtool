@@ -173,3 +173,40 @@
   text-decoration: underline;
   background-color: #a4161a;
 }
+.navbar-profile {
+  position: relative;
+}
+
+.navbar-profile-img {
+  width: 40px; /* Ajusta el tamaño según tus necesidades */
+  height: 40px; /* Ajusta el tamaño según tus necesidades */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.navbar-profile-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.navbar-profile-menu a,
+.navbar-profile-menu button {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #1976d2;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.navbar-profile-menu a:hover,
+.navbar-profile-menu button:hover {
+  background-color: #f0f0f0;
+}
