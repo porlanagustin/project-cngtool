@@ -1,6 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 import { axiosInstance } from "../axios/axiosInstance.js";
-
+import Swal from "sweetalert2";
 
 export const getToken = () => {
   const token = localStorage.getItem("token");
@@ -17,12 +17,31 @@ export const login = async (dataDNI, dataPassword) => {
 
   try {
     const response = await axiosInstance.post("/login", formData);
-    if (response.data) {
+    if (response.data.access_token) {
       localStorage.setItem("token", response.data.access_token);
       return true;
     }
-  } catch {
-    console.log("DENEGADO");
+  } catch (error) {
+    if (error.response) {
+      if (error.response.status === 401) {
+        console.log(error.response)
+        Swal.fire({
+          icon: "error",
+          title: `Credenciales incorrectas\n ${error.response.data.detail}`,
+          text: "Por favor, verifica tus credenciales e intenta nuevamente.",
+          footer:
+            '<a href="/register">Solicitar acceso o reseteo de password</a>',
+        });
+        throw new Error("Credencials incorrectas");
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error en el servidor",
+          text: "Verifica tu conexion a internet o notifica al administrador.",
+        });
+        throw new Error("Error en el servidor, intenta nuevamente");
+      }
+    }
   }
 };
 

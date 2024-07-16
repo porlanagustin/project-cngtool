@@ -101,7 +101,7 @@ const Navbar = () => {
                 >
                   Restaurantes
                 </Link>
-                <Link to="" onClick={() => handleMenuClose(setDestinosOpen)}>
+                <Link to="/PlaceToVisit" onClick={() => handleMenuClose(setDestinosOpen)}>
                   Lugares a visitar
                 </Link>
                 <Link to="" onClick={() => handleMenuClose(setDestinosOpen)}>

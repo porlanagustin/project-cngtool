@@ -2,28 +2,24 @@ import "./Login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../../services/authServices.js";
-import Swal from "sweetalert2";
 
 const Login = () => {
   const [dataDNI, setDataDNI] = useState("");
   const [dataPassword, setDataPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const loginRequest = async (dataDNI, dataPassword) => {
+    setIsLoading(true);
     try {
       const loggedIn = await login(dataDNI, dataPassword);
       if (loggedIn) {
         navigate("/home");
       }
     } catch (error) {
-      console.error("Error en solicitud de inicio de sesión:", error);
-      Swal.fire({
-        icon: "error",
-        title: "Credenciales incorrectas",
-        text: "Por favor, verifica tus credenciales e intenta nuevamente.",
-        footer:
-          '<a href="/register">Solicitar acceso o reseteo de password</a>',
-      });
+      console.error("Error en solicitud de inicio de sesión:", error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -57,7 +53,9 @@ const Login = () => {
             required
           />
 
-          <button type="submit">Iniciar Sesión</button>
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "Cargando..." : "Iniciar Sesión"}
+          </button>
         </form>
       </div>
     </div>
