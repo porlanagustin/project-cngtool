@@ -3,7 +3,6 @@ import Transfers from "../components/pages/suppliers/gifts/Gifts";
 import Gifts from "../components/pages/suppliers/gifts/Gifts";
 import Restaurants from "../components/pages/infoDestinations/restaurants/Restaurants";
 import CalendarEvents from "../components/pages/calendarEvents/CalendarEvents";
-import Login from "../components/pages/login/Login";
 import PlaceToVisit from "../components/pages/infoDestinations/placeToVisit/PlaceToVisit";
 import Theater from "../components/pages/infoDestinations/theater/Theater";
 
@@ -42,10 +41,5 @@ export const routes = [
     id: "theater",
     path: "/theater",
     Element: Theater,
-  },
-  {
-    id: "login",
-    path: "/login",
-    Element: Login,
   },
 ];

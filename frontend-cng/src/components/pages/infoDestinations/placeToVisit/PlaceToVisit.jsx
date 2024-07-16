@@ -1,16 +1,19 @@
 import React from "react";
 import "./PlaceToVisit.css";
-import Card from "../../../common/card/Card";
-import AddRestaurant from "../../../common/AddRestaurant/AddRestaurant";
+
 
 const PlaceToVisit = () => {
   return (
     <div>
-      <div className="contenedorCarta"></div>
-      <div className="contenedorAñadir">
-        {" "}
-        <AddRestaurant> </AddRestaurant>
-      </div>{" "}
+      <div class="container">
+        <div class="part1">America del Norte</div>
+        <div class="part2">America Central</div>
+        <div class="part3">America del Sur</div>
+        <div class="part4">Europa</div>
+        <div class="part5">Asia</div>
+        <div class="part6">Oceania</div>
+        <div class="part7">Africa</div>
+    </div>
     </div>
   );
 };
