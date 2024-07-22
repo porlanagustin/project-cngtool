@@ -2,134 +2,27 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 20px;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 20px;
+  height: 50vh; 
+  margin: 0; 
 }
-<<<<<<< HEAD
 
-.part {
-  flex: 1 1 calc(25% - 40px);
+.element-box {
+  width: 200px;
   height: 200px;
-=======
-.part1 {
-  background-color: #4caf50;
->>>>>>> cucho
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: center;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  background-color: #49494d;
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-}
-<<<<<<< HEAD
-
-.part:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  text-align: center;
 }
 
-.part:hover.part1 {
-  background-color: #388e3c;
-}
-
-.part:hover.part2 {
-  background-color: #e64a19;
-}
-
-.part:hover.part3 {
-  background-color: #1976d2;
-}
-
-.part:hover.part4 {
-  background-color: #ffa000;
-}
-
-.part:hover.part5 {
-  background-color: #689f38;
-}
-
-.part:hover.part6 {
-  background-color: #c2185b;
-}
-
-.part:hover.part7 {
-  background-color: #0097a7;
-}
-
-@media (max-width: 768px) {
-  .part {
-    flex: 1 1 calc(50% - 40px);
-    min-width: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  .part {
-    flex: 1 1 calc(100% - 40px);
-    min-width: 100px;
-  }
-=======
-.part1:hover {
-  background-color: #388e3c;
-}
-.part2 {
-  background-color: #ff5722;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.part2:hover {
-  background-color: #e64a19;
-}
-.part3 {
-  background-color: #2196f3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.part3:hover {
-  background-color: #1976d2;
-}
-.part4 {
-  background-color: #ffc107;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.part4:hover {
-  background-color: #ffa000;
-}
-.part5 {
-  background-color: #8bc34a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.part5:hover {
-  background-color: #689f38;
-}
-.part6 {
-  background-color: #e91e63;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.part6:hover {
-  background-color: #c2185b;
-}
-.part7 {
-  background-color: #00bcd4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.part7:hover {
-  background-color: #0097a7;
->>>>>>> cucho
+.element-box:hover {
+  background-color: #f0f0f0;
 }

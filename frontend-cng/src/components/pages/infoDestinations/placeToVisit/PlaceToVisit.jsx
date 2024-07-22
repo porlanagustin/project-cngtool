@@ -1,22 +1,23 @@
-import React from "react";
-import "./PlaceToVisit.css";
-
-const regions = [
-  { name: "América del Norte", class: "part1" },
-  { name: "América Central", class: "part2" },
-  { name: "América del Sur", class: "part3" },
-  { name: "Europa", class: "part4" },
-  { name: "Asia", class: "part5" },
-  { name: "Oceanía", class: "part6" },
-  { name: "África", class: "part7" },
-];
+import { useNavigate } from "react-router-dom";
+import { regionRoutes } from "./regionRoutes/regionRoutes";
+import './PlaceToVisit.css';
 
 const PlaceToVisit = () => {
+  const navigate = useNavigate();
+
+  const handleRedirect = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="container">
-      {regions.map((region, index) => (
-        <div key={index} className={`part ${region.class}`}>
-          {region.name}
+      {regionRoutes.map(({ id, path, label }) => (
+        <div
+          key={id}
+          className="element-box"
+          onClick={() => handleRedirect(path)}
+        >
+          {label}
         </div>
       ))}
     </div>
