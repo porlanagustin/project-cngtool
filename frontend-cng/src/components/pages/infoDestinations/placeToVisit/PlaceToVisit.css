@@ -1,77 +1,71 @@
 .container {
-  width: 1000px;
-  height: 600px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 5px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
 }
-.part1 {
-  background-color: #4CAF50;
+
+.part {
+  flex: 1 1 calc(25% - 40px);
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #49494d;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
-.part1:hover {
-  background-color: #388E3C;
+
+.part:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-.part2 {
-  background-color: #FF5722;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.part:hover.part1 {
+  background-color: #388e3c;
 }
-.part2:hover {
-  background-color: #E64A19;
+
+.part:hover.part2 {
+  background-color: #e64a19;
 }
-.part3 {
-  background-color: #2196F3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.part:hover.part3 {
+  background-color: #1976d2;
 }
-.part3:hover {
-  background-color: #1976D2;
+
+.part:hover.part4 {
+  background-color: #ffa000;
 }
-.part4 {
-  background-color: #FFC107;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.part:hover.part5 {
+  background-color: #689f38;
 }
-.part4:hover {
-  background-color: #FFA000;
+
+.part:hover.part6 {
+  background-color: #c2185b;
 }
-.part5 {
-  background-color: #8BC34A;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.part:hover.part7 {
+  background-color: #0097a7;
 }
-.part5:hover {
-  background-color: #689F38;
+
+@media (max-width: 768px) {
+  .part {
+    flex: 1 1 calc(50% - 40px);
+    min-width: 150px;
+  }
 }
-.part6 {
-  background-color: #E91E63;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.part6:hover {
-  background-color: #C2185B;
-}
-.part7 {
-  background-color: #00BCD4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.part7:hover {
-  background-color: #0097A7;
+
+@media (max-width: 480px) {
+  .part {
+    flex: 1 1 calc(100% - 40px);
+    min-width: 100px;
+  }
 }
