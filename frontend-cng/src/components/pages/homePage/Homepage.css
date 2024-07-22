@@ -1,7 +1,7 @@
 /* Homepage.css */
 .homepage {
   width: 100%;
-  height: auto;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
   color: #fff;
   background: linear-gradient(135deg, #046e97, #c0baba);
@@ -22,7 +22,7 @@
 }
 
 .welcome h1 {
-  font-size: 15vmin;
+  font-size: 12vmin;
   color: #ffffff;
   animation: colorPulse 5s infinite;
 }
@@ -203,13 +203,17 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .homepage {
+    padding: 15px;
+  }
+
   .welcome h1 {
-    font-size: 10vmin;
+    font-size: 12vmin;
   }
 
   .welcome p {
-    font-size: 3vmin;
+    font-size: 3.5vmin;
   }
 
   .search-section h2 {
@@ -218,10 +222,12 @@
 
   .search-input {
     font-size: 14px;
+    max-width: 250px;
   }
 
   .search-button {
     font-size: 14px;
+    max-width: 250px;
   }
 
   .contact-info h2 {
@@ -233,13 +239,17 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .homepage {
+    padding: 10px;
+  }
+
   .welcome h1 {
-    font-size: 12vmin;
+    font-size: 10vmin;
   }
 
   .welcome p {
-    font-size: 2.5vmin;
+    font-size: 3vmin;
   }
 
   .search-section h2 {
@@ -248,10 +258,12 @@
 
   .search-input {
     font-size: 12px;
+    max-width: 200px;
   }
 
   .search-button {
     font-size: 12px;
+    max-width: 200px;
   }
 
   .contact-info h2 {
@@ -265,5 +277,46 @@
   .sugerencias {
     flex-direction: column;
     gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage {
+    padding: 5px;
+  }
+
+  .welcome h1 {
+    font-size: 8vmin;
+  }
+
+  .welcome p {
+    font-size: 2.5vmin;
+  }
+
+  .search-section h2 {
+    font-size: 14px;
+  }
+
+  .search-input {
+    font-size: 10px;
+    max-width: 150px;
+  }
+
+  .search-button {
+    font-size: 10px;
+    max-width: 150px;
+  }
+
+  .contact-info h2 {
+    font-size: 12px;
+  }
+
+  .contact-info p {
+    font-size: 10px;
+  }
+
+  .sugerencias {
+    flex-direction: column;
+    gap: 10px;
   }
 }

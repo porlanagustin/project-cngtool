@@ -1,7 +1,6 @@
-// Homepage.jsx
-import React from "react";
 import "./Homepage.css";
 import SuggestionCard from "../../common/SuggestionCard/SuggestionCard";
+
 const Homepage = () => {
   return (
     <div className="homepage">
