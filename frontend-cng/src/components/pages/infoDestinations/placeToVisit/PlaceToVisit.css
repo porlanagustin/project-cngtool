@@ -2,23 +2,22 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 20px;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 20px;
+  height: 50vh; 
+  margin: 0; 
 }
 
-.part {
-  flex: 1 1 calc(25% - 40px);
+.element-box {
+  width: 200px;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: center;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+<<<<<<< HEAD
   background-color: #49494d;
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
@@ -96,4 +95,14 @@
     flex: 1 1 calc(100% - 40px);
     min-width: 100px;
   }
+=======
+  padding: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  text-align: center;
+}
+
+.element-box:hover {
+  background-color: #f0f0f0;
+>>>>>>> cucho
 }
