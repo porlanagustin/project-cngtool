@@ -5,6 +5,7 @@ import Restaurants from "../components/pages/infoDestinations/restaurants/Restau
 import CalendarEvents from "../components/pages/calendarEvents/CalendarEvents";
 import PlaceToVisit from "../components/pages/infoDestinations/placeToVisit/PlaceToVisit";
 import Theater from "../components/pages/infoDestinations/theater/Theater";
+import ProfilePage from "../components/pages/profile/profile"; // Asegúrate de que la ruta es correcta
 
 export const routes = [
   {
@@ -41,5 +42,10 @@ export const routes = [
     id: "theater",
     path: "/theater",
     Element: Theater,
+  },
+  {
+    id: "profile",
+    path: "/profile",
+    Element: ProfilePage, // Usa el componente ProfilePage
   },
 ];
