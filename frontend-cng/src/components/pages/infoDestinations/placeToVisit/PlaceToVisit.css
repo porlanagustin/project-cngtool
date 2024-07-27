@@ -1,108 +1,45 @@
+/* General container styling */
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  height: 50vh; 
-  margin: 0; 
+  padding: 20px;
 }
 
 .element-box {
-  width: 200px;
-  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #000;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-<<<<<<< HEAD
-  background-color: #49494d;
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-}
-
-.part1 {
-  background-color: #4caf50;
-}
-
-.part1:hover {
-  background-color: #388e3c;
-}
-
-.part2 {
-  background-color: #ff5722;
-}
-
-.part2:hover {
-  background-color: #e64a19;
-}
-
-.part3 {
-  background-color: #2196f3;
-}
-
-.part3:hover {
-  background-color: #1976d2;
-}
-
-.part4 {
-  background-color: #ffc107;
-}
-
-.part4:hover {
-  background-color: #ffa000;
-}
-
-.part5 {
-  background-color: #8bc34a;
-}
-
-.part5:hover {
-  background-color: #689f38;
-}
-
-.part6 {
-  background-color: #e91e63;
-}
-
-.part6:hover {
-  background-color: #c2185b;
-}
-
-.part7 {
-  background-color: #00bcd4;
-}
-
-.part7:hover {
-  background-color: #0097a7;
-}
-
-.part:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 768px) {
-  .part {
-    flex: 1 1 calc(50% - 40px);
-    min-width: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  .part {
-    flex: 1 1 calc(100% - 40px);
-    min-width: 100px;
-  }
-=======
-  padding: 10px;
+  width: 200px;
+  height: 150px;
   background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 18px;
+  color: #333;
   text-align: center;
+  padding: 10px;
+  text-transform: uppercase;
 }
 
 .element-box:hover {
-  background-color: #f0f0f0;
->>>>>>> cucho
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .element-box {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
 }
